@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Demo View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DemoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="613-nw-wru" userLabel="SquareCashButton">
+                                <rect key="frame" x="175" y="250" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Jye-pU-l2o"/>
+                                    <constraint firstAttribute="width" constant="100" id="KKd-EV-8NV"/>
+                                </constraints>
+                                <state key="normal" image="square-cash-icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Iua-pC-I3x" kind="presentation" id="Vzq-4q-8bg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omr-0y-iOl" userLabel="FacebookButton">
+                                <rect key="frame" x="325" y="250" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="OwY-bz-wK6"/>
+                                    <constraint firstAttribute="height" constant="100" id="ci2-cM-2vb"/>
+                                </constraints>
+                                <state key="normal" image="facebook-icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="QZ9-7W-GOh" kind="presentation" id="pcD-37-PvJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BLKFlexibleHeightBar Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMC-ZW-gWS">
+                                <rect key="frame" x="16" y="20" width="568" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="TQ1-Wl-xeu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pMC-ZW-gWS" secondAttribute="trailing" constant="16" id="CvR-cU-HXs"/>
+                            <constraint firstItem="pMC-ZW-gWS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="FUe-QY-tw4"/>
+                            <constraint firstItem="pMC-ZW-gWS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JHd-yC-UMG"/>
+                            <constraint firstAttribute="centerX" secondItem="Omr-0y-iOl" secondAttribute="centerX" constant="-75" id="QUX-7K-WqX"/>
+                            <constraint firstAttribute="centerX" secondItem="613-nw-wru" secondAttribute="centerX" constant="75" id="dOG-wr-GnI"/>
+                            <constraint firstAttribute="centerY" secondItem="613-nw-wru" secondAttribute="centerY" id="kDT-Z8-tFS"/>
+                            <constraint firstAttribute="centerY" secondItem="Omr-0y-iOl" secondAttribute="centerY" id="opH-oH-BpU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="facebookButton" destination="Omr-0y-iOl" id="tXb-pD-fO4"/>
+                        <outlet property="squareCashButton" destination="613-nw-wru" id="pSA-JU-jHx"/>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="hIp-vg-bID"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="305"/>
+        </scene>
+        <!--Square Cash Style View Controller-->
+        <scene sceneID="GUJ-w2-dY0">
+            <objects>
+                <viewController id="Iua-pC-I3x" userLabel="Square Cash Style View Controller" customClass="SquareCashStyleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RMe-dG-lnf"/>
+                        <viewControllerLayoutGuide type="bottom" id="cBi-lg-n76"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2vZ-Bp-LUz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3Cq-P3-5X9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Iua-pC-I3x" id="oUl-He-2eS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3Cq-P3-5X9" secondAttribute="trailing" id="9N1-PN-BwU"/>
+                            <constraint firstItem="cBi-lg-n76" firstAttribute="top" secondItem="3Cq-P3-5X9" secondAttribute="bottom" id="DxS-3K-wxF"/>
+                            <constraint firstItem="3Cq-P3-5X9" firstAttribute="top" secondItem="2vZ-Bp-LUz" secondAttribute="top" id="UF0-Ld-c2q"/>
+                            <constraint firstItem="3Cq-P3-5X9" firstAttribute="leading" secondItem="2vZ-Bp-LUz" secondAttribute="leading" id="ujT-aK-aaF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="3Cq-P3-5X9" id="Lhx-Wg-sOg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Yh-cK-XF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066" y="-62"/>
+        </scene>
+        <!--Facebook Style View Controller-->
+        <scene sceneID="lFw-Hi-E88">
+            <objects>
+                <viewController id="QZ9-7W-GOh" userLabel="Facebook Style View Controller" customClass="FacebookStyleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3hM-fc-x5e"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZI6-jP-CD4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NKe-gw-2c3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-cK-feD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="QZ9-7W-GOh" id="vuL-R2-efF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZI6-jP-CD4" firstAttribute="top" secondItem="nA4-cK-feD" secondAttribute="bottom" id="7Qd-bt-mq4"/>
+                            <constraint firstItem="nA4-cK-feD" firstAttribute="top" secondItem="NKe-gw-2c3" secondAttribute="top" id="L8W-zY-VvB"/>
+                            <constraint firstAttribute="trailing" secondItem="nA4-cK-feD" secondAttribute="trailing" id="Qvc-rZ-l7s"/>
+                            <constraint firstItem="nA4-cK-feD" firstAttribute="leading" secondItem="NKe-gw-2c3" secondAttribute="leading" id="opu-MW-d6K"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="nA4-cK-feD" id="Qvi-7S-Ftp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwn-js-7fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066" y="672"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook-icon.png" width="512" height="512"/>
+        <image name="square-cash-icon.png" width="256" height="256"/>
+    </resources>
+</document>
