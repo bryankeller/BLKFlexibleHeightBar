@@ -35,6 +35,7 @@
     [behaviorDefiner addSnappingPositionProgress:0.0 forProgressRangeStart:0.0 end:0.5];
     [behaviorDefiner addSnappingPositionProgress:1.0 forProgressRangeStart:0.5 end:1.0];
     behaviorDefiner.snappingEnabled = YES;
+    behaviorDefiner.elasticMaximumHeightAtTop = YES;
     self.myCustomBar.behaviorDefiner = behaviorDefiner;
     
     // Configure a separate UITableViewDelegate and UIScrollViewDelegate (optional)

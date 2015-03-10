@@ -23,16 +23,6 @@
 
 @implementation SquareCashStyleBehaviorDefiner
 
-- (instancetype)init
-{
-    if(self = [super init])
-    {
-        self.elasticMaximumHeightAtTop = YES;
-    }
-    
-    return self;
-}
-
 
 # pragma mark - UIScrollViewDelegate methods
 
