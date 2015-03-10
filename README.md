@@ -131,4 +131,20 @@ finalLayoutAttributes.transform = CGAffineTransformConcat(scale, translation);
 
 
 ## Creating custom behavior definers
-TODO
+If one of the included behavior definers isn't what you're looking for in your app, creating your own custom behavior definer might be the way to go.
+
+In order to support any kind of behavior, `BLKFlexibleHeightBar` was designed to feature a plug-n-play architecure for bar behaviors. By subclassing `BLKFlexibleHeightBarBehaviorDefiner`, developers can have complete control over how and when a bar's `progress` property (and therefore, height) is updated. 
+
+* In most scenarios, `BLKFlexibleHeightBarBehaviorDefiner` isn't useful until subclassed. By itself, it only provides snapping functionality and a property that controls whether or not the bar bounces when it reaches its maximum height. It makes no attempt to adjust the height of the bar during scrolling.
+
+### Subclassing guidelines
+Start by creating a subclass `BLKFlexibleHeightBarBehaviorDefiner`.
+
+The basic pattern for the definer is as follows:
+
+1. Implement `UIScrollViewDelegate` protocol methods. `-scrollViewDidScroll:` is generally a useful starting point.
+2. Based on the current scroll position in `-scrollViewDidScroll:`, calculate a new progress value for the behavior definer's `flexibleHeightBar` property. It will be useful to ask the `flexibleHeightBar` for its `maximumBarHeight` and `minimumBarHeight` properties.
+3. Set `self.flexibleHeightBar.progress` to the calculated value from step 2.
+4. Notify the behavior definer's `flexibleHeightBar` that it needs to re-layout using `[self.flexibleHeightBar setNeedsLayout]`
+
+It may be useful to make other calculations outside of `-scrollViewDidScroll:`. For example, the included `FacebookStyleBehaviorDefiner` needs to apply scrolling thresholds before the bar should hide or reveal itself. This calculation is done inside of `-scrollViewWillBeginDragging:`
