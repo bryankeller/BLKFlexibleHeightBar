@@ -22,7 +22,7 @@
 ## How do I use it?
 
 ###Before we get started, understand this:
-The height of the bar is not set directy by adjusting the bar's size. Rather, height adjustments are made by setting the `progress` property of the bar. The progress property represents how much the bar has shrunk from its maximum height to its minimum height
+The height of the bar is not set directy by adjusting the bar's frame. Rather, height adjustments are made by setting the `progress` property of the bar. The progress property represents how much the bar has shrunk from its maximum height to its minimum height
 
 * `progress == 0.0` means the bar is at its maximum height.
 * `progress == 0.5` means the bar is halfway between its maximum height and minimum height.
