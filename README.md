@@ -147,4 +147,11 @@ The basic pattern for the definer is as follows:
 3. Set `self.flexibleHeightBar.progress` to the calculated value from step 2.
 4. Notify the behavior definer's `flexibleHeightBar` that it needs to re-layout using `[self.flexibleHeightBar setNeedsLayout]`
 
-It may be useful to make other calculations outside of `-scrollViewDidScroll:`. For example, the included `FacebookStyleBehaviorDefiner` needs to apply scrolling thresholds before the bar should hide or reveal itself. This calculation is done inside of `-scrollViewWillBeginDragging:`
+It may be useful to make other calculations outside of `-scrollViewDidScroll:`. For example, the included `FacebookStyleBehaviorDefiner` needs to apply scrolling thresholds before the bar should hide or reveal itself. This calculation is done inside of `-scrollViewWillBeginDragging:`.
+
+## TODO
+* Support for **autolayout** based layout attributes would simplify some of the trickier bar designs, removing the need to perform final frame and size calculations yourself when defining layout attributes.
+* Figure out how this could play nicely with **UINavigationBar**.
+
+## Let me know what you think!
+You can get in touch with me via Twitter [@BKyourway19](http://twitter.com/BKyourway19)
