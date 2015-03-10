@@ -9,4 +9,6 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/bryankeller/BLKFlexibleHeightBar.git', :tag => s.version.to_s }
   s.source_files = 'BLKFlexibleHeightBar/*.{h,m}'
   s.requires_arc = true
+  s.platform = :ios
+  s.platform = :ios, '6.0'
 end
