@@ -95,7 +95,8 @@ Start by creating and adding a subview to your bar. Don't bother giving it a fra
 UILabel *label = [[UILabel alloc] init];
 label.text = @"TrendyStartup.io";
 label.font = [UIFont systemFontOfSize:25.0];
-label.textAlignment = NSTextAlignmentCenter;
+label.textColor = [UIColor whiteColor];
+[label sizeToFit];
 [myBar addSubview:label];
 ```
 
