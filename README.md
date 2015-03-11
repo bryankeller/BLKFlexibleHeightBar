@@ -16,8 +16,8 @@
 
 ## How do I install it?
 ### CocoaPods Installation
-1. Add `pod 'BLKFlexibleHeightBar'` to your project's Podfile
-2. Run `pod install`
+1. Add `pod 'BLKFlexibleHeightBar'` to your project's Podfile.
+2. Run `pod install`.
 
 ### Manual Installation
 1. Clone this repo or click "Download ZIP" on the side.
@@ -158,7 +158,6 @@ It may be useful to make other calculations outside of `-scrollViewDidScroll:`. 
 ## TODO
 * Include a `SafariStyleBehaviorDefiner` (uses velocity, not just scroll position).
 * Support for **Auto Layout** based layout attributes would simplify some of the trickier bar designs, removing the need to perform final frame and size calculations yourself when defining layout attributes.
-* Figure out how this could play nicely with **UINavigationBar**
 
 ## Let me know what you think!
 You can get in touch with me via Twitter [@BKyourway19](http://twitter.com/BKyourway19)
