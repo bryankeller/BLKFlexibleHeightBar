@@ -1,4 +1,4 @@
-<img src="http://foxweb.marist.edu/users/stbk/TitleImage.gif" alt="Square Cash Style Bar" width="600"/> 
+<img src="http://foxweb.marist.edu/users/stbk/TitleImage.png" alt="BLKFlexibleHeightBar" width="600"/> 
 
 ## Create condensing header bars like those seen in the Facebook, Square Cash, and Safari iOS apps.
 
