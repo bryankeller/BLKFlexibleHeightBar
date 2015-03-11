@@ -15,6 +15,11 @@
 
 
 ## How do I install it?
+### CocoaPods Installation
+1. Add `pod 'BLKFlexibleHeightBar'` to your project's Podfile
+2. Run `pod install`
+
+### Manual Installation
 1. Clone this repo or click "Download ZIP" on the side.
 2. Copy all of the files in the "BLKFlexibleHeightBar" folder into your project. You probably want to check the box that says "Copy items if needed" as well as make sure that the target you want to add the files to is checked.
 
