@@ -19,6 +19,22 @@
 
 #import "BLKFlexibleHeightBar.h"
 
+@interface UIView (BLKRecursive)
+- (NSArray *)blk_allSubviews;
+@end
+
+@implementation UIView (BLKRecursive)
+- (NSArray *)blk_allSubviews {
+    NSMutableArray *arrayOfSubviews = [[NSMutableArray alloc] init];
+
+    [arrayOfSubviews addObject:self];
+    for (UIView *subview in self.subviews) {
+        [arrayOfSubviews addObjectsFromArray:[subview blk_allSubviews]];
+    }
+    return [arrayOfSubviews copy];
+}
+@end
+
 @interface BLKFlexibleHeightBar ()
 
 @end
@@ -87,9 +103,13 @@
     }
     
     // Update subviews using the appropriate layout attributes for the current progress
-    [self.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [self updateSubviewsUsingLayoutAttributes];
+}
+
+- (void)updateSubviewsUsingLayoutAttributes {
+    
+    for (UIView *subview in [self blk_allSubviews]) {
         
-        UIView *subview = obj;
         for(int i = 0; i < [subview numberOfLayoutAttributes]; i++)
         {
             CGFloat floorProgressPosition = [subview progressAtIndex:i];
@@ -116,8 +136,7 @@
                 }
             }
         }
-        
-    }];
+    }
 }
 
 - (void)applyFloorLayoutAttributes:(BLKFlexibleHeightBarSubviewLayoutAttributes *)floorLayoutAttributes ceilingLayoutAttributes:(BLKFlexibleHeightBarSubviewLayoutAttributes *)ceilingLayoutAttributes toSubview:(UIView *)subview withFloorProgress:(CGFloat)floorProgress ceilingProgress:(CGFloat)ceilingProgress;
