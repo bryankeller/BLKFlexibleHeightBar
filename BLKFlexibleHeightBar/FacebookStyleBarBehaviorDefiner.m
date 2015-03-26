@@ -106,7 +106,7 @@
         }
         else
         {
-            // Edge case (not true) - user is scrolling to the top but there isn't enough runway left to pass the threshold
+//            // Edge case (not true) - user is scrolling to the top but there isn't enough runway left to pass the threshold
             if((scrollView.contentOffset.y+scrollView.contentInset.top) > (self.thresholdNegativeDirection+(self.flexibleHeightBar.maximumBarHeight-self.flexibleHeightBar.minimumBarHeight)))
             {
                 [self applyNegativeDirectionProgressTrackingThreshold];
@@ -138,11 +138,14 @@
     // Edge case - user starts to scroll while the scroll view is stretched below the bottom
     else if(scrollView.contentOffset.y > (scrollView.contentSize.height-scrollViewViewportHeight))
     {
-        self.previousYOffset = scrollView.contentSize.height - scrollViewViewportHeight;
-        self.previousProgress = 1.0;
-        
-        [self applyNegativeDirectionProgressTrackingThreshold];
-        [self applyPositiveDirectionProgressTrackingThreshold];
+        if(scrollView.contentSize.height > scrollViewViewportHeight)
+        {
+            self.previousYOffset = scrollView.contentSize.height - scrollViewViewportHeight;
+            self.previousProgress = 1.0;
+            
+            [self applyNegativeDirectionProgressTrackingThreshold];
+            [self applyPositiveDirectionProgressTrackingThreshold];
+        }
     }
 }
 
