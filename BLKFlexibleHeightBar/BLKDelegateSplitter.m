@@ -32,20 +32,36 @@
     return self;
 }
 
-- (id)forwardingTargetForSelector:(SEL)aSelector
+- (void)forwardInvocation:(NSInvocation *)anInvocation
 {
+    SEL aSelector = [anInvocation selector];
+    
     if([self.firstDelegate respondsToSelector:aSelector])
     {
-        return self.firstDelegate;
+        [anInvocation invokeWithTarget:self.firstDelegate];
     }
-    else if([self.secondDelegate respondsToSelector:aSelector])
+    
+    if([self.secondDelegate respondsToSelector:aSelector])
     {
-        return self.secondDelegate;
+        [anInvocation invokeWithTarget:self.secondDelegate];
     }
-    else
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+{
+    NSMethodSignature *first = [(NSObject *)self.firstDelegate methodSignatureForSelector:aSelector];
+    NSMethodSignature *second = [(NSObject *)self.secondDelegate methodSignatureForSelector:aSelector];
+    
+    if(first)
     {
-        return nil;
+        return first;
     }
+    else if(second)
+    {
+        return second;
+    }
+    
+    return nil;
 }
 
 - (BOOL)respondsToSelector:(SEL)aSelector
