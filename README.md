@@ -5,7 +5,7 @@
 <img src="http://foxweb.marist.edu/users/stbk/SquareCashDemo2.gif" alt="Square Cash Style Bar" width="300"/> 
 <img src="http://foxweb.marist.edu/users/stbk/FacebookDemo2.gif" alt="Square Cash Style Bar" width="300"/>
 
-`BLKFlexibleHeightBar` allows you to create header bars with flexible heights. Often, this sort of UI paradigm is used to hide chrome and make room for more content as a user is scrolling. This is seen in third party apps like Facebook and Square Cash, as well as first party apps like Safari.
+`BLKFlexibleHeightBar` allows you to create header bars with flexible heights. Often, this sort of UI paradigm is used to hide "chrome" and make room for more content as a user is scrolling. This is seen in third party apps like Facebook and Square Cash, as well as first party apps like Safari.
 
 `BLKFlexibleHeightBar` can create bars that look and act any way you'd like:
 
@@ -36,6 +36,8 @@ The height of the bar is not set directy by adjusting the bar's frame. Rather, h
 
 ### Basic Setup
 A good starting place is to have a project with some kind of scrolling view (i.e. UITableView, UICollectionView, UIWebView, UIScrollView, etc). Make sure you've set up a property to access your scrolling view since we'll need to set its delegate property later on.
+
+NOTE: Because `UITableViewController`'s `view` property is the same as its `tableView` property, adding a `BLKFlexibleHeightBar` instance as a subview of a `UITableViewController`'s `view` results in the bar being a subview of the `tableView`. I personally recommend just using a plain old `UIViewController` so you can fully control its view's subviews. Alternatively, see [this stackoverflow post](http://stackoverflow.com/questions/4641879/how-to-add-a-uiview-above-the-current-uitableviewcontroller).
 
 First, import the main `BLKFlexibleHeightBar` header into the class where you'll be configuring the bar.
 
