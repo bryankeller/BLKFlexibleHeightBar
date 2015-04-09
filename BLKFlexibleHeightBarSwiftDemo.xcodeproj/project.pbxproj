@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		295886A871B40FD120036E43 /* Pods_BLKFlexibleHeightBarSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C0D015B6C2926112C5057B /* Pods_BLKFlexibleHeightBarSwiftDemo.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8FC5A03B538BD0B544C8B2C9 /* Pods_BLKFlexibleHeightBarSwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4A006797BD7C5287319C69 /* Pods_BLKFlexibleHeightBarSwiftDemoTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D84BAD8C1AD6D72E00A58D71 /* FacebookStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BAD8B1AD6D72E00A58D71 /* FacebookStyleViewController.swift */; };
+		D84BAD911AD6E16A00A58D71 /* SquareCashStyleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BAD901AD6E16A00A58D71 /* SquareCashStyleBar.swift */; };
+		D84BAD931AD6E3FA00A58D71 /* SquareCashStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BAD921AD6E3FA00A58D71 /* SquareCashStyleViewController.swift */; };
+		D8E734F01AD6C0A900428694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E734EF1AD6C0A900428694 /* AppDelegate.swift */; };
+		D8E734F71AD6C0A900428694 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E734F61AD6C0A900428694 /* Images.xcassets */; };
+		D8E734FA1AD6C0A900428694 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E734F81AD6C0A900428694 /* LaunchScreen.xib */; };
+		D8E735061AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E735051AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests.swift */; };
+		D8E735111AD6C23700428694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E735101AD6C23700428694 /* Main.storyboard */; };
+		D8E735161AD6C27500428694 /* square-cash-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E735121AD6C27500428694 /* square-cash-icon.png */; };
+		D8E735171AD6C27500428694 /* facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E735131AD6C27500428694 /* facebook-icon.png */; };
+		D8E735181AD6C27500428694 /* ProfilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E735141AD6C27500428694 /* ProfilePicture.png */; };
+		D8E735191AD6C27500428694 /* Close.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E735151AD6C27500428694 /* Close.png */; };
+		D8E7351B1AD6C2B600428694 /* FacebookStyleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E7351A1AD6C2B600428694 /* FacebookStyleBar.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8E735001AD6C0A900428694 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8E734E21AD6C0A900428694 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8E734E91AD6C0A900428694;
+			remoteInfo = BLKFlexibleHeightBarSwiftDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1089EABEB5A231324D4B4E6C /* Pods-BLKFlexibleHeightBarSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLKFlexibleHeightBarSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLKFlexibleHeightBarSwiftDemo/Pods-BLKFlexibleHeightBarSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		30119CC0B623FE83CA7E281D /* Pods-BLKFlexibleHeightBarSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLKFlexibleHeightBarSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLKFlexibleHeightBarSwiftDemo/Pods-BLKFlexibleHeightBarSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6F4A006797BD7C5287319C69 /* Pods_BLKFlexibleHeightBarSwiftDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLKFlexibleHeightBarSwiftDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ABB143E4B5BB1F6A57C300C /* Pods-BLKFlexibleHeightBarSwiftDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLKFlexibleHeightBarSwiftDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLKFlexibleHeightBarSwiftDemoTests/Pods-BLKFlexibleHeightBarSwiftDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D813B57C4CD1EED4BD02A0F /* Pods-BLKFlexibleHeightBarSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLKFlexibleHeightBarSwiftDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLKFlexibleHeightBarSwiftDemoTests/Pods-BLKFlexibleHeightBarSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		C4C0D015B6C2926112C5057B /* Pods_BLKFlexibleHeightBarSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLKFlexibleHeightBarSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D84BAD8B1AD6D72E00A58D71 /* FacebookStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookStyleViewController.swift; sourceTree = "<group>"; };
+		D84BAD901AD6E16A00A58D71 /* SquareCashStyleBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCashStyleBar.swift; sourceTree = "<group>"; };
+		D84BAD921AD6E3FA00A58D71 /* SquareCashStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCashStyleViewController.swift; sourceTree = "<group>"; };
+		D8E734EA1AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLKFlexibleHeightBarSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E734EE1AD6C0A900428694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8E734EF1AD6C0A900428694 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8E734F61AD6C0A900428694 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D8E734F91AD6C0A900428694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D8E734FF1AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLKFlexibleHeightBarSwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E735041AD6C0A900428694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8E735051AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLKFlexibleHeightBarSwiftDemoTests.swift; sourceTree = "<group>"; };
+		D8E7350F1AD6C1EC00428694 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		D8E735101AD6C23700428694 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D8E735121AD6C27500428694 /* square-cash-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-cash-icon.png"; sourceTree = "<group>"; };
+		D8E735131AD6C27500428694 /* facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-icon.png"; sourceTree = "<group>"; };
+		D8E735141AD6C27500428694 /* ProfilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfilePicture.png; sourceTree = "<group>"; };
+		D8E735151AD6C27500428694 /* Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Close.png; sourceTree = "<group>"; };
+		D8E7351A1AD6C2B600428694 /* FacebookStyleBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookStyleBar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8E734E71AD6C0A900428694 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				295886A871B40FD120036E43 /* Pods_BLKFlexibleHeightBarSwiftDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E734FC1AD6C0A900428694 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FC5A03B538BD0B544C8B2C9 /* Pods_BLKFlexibleHeightBarSwiftDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1632BBD7B6ED6F9E0505A216 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1089EABEB5A231324D4B4E6C /* Pods-BLKFlexibleHeightBarSwiftDemo.debug.xcconfig */,
+				30119CC0B623FE83CA7E281D /* Pods-BLKFlexibleHeightBarSwiftDemo.release.xcconfig */,
+				7ABB143E4B5BB1F6A57C300C /* Pods-BLKFlexibleHeightBarSwiftDemoTests.debug.xcconfig */,
+				8D813B57C4CD1EED4BD02A0F /* Pods-BLKFlexibleHeightBarSwiftDemoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8E734E11AD6C0A900428694 = {
+			isa = PBXGroup;
+			children = (
+				D8E734EC1AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemo */,
+				D8E735021AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests */,
+				D8E734EB1AD6C0A900428694 /* Products */,
+				1632BBD7B6ED6F9E0505A216 /* Pods */,
+				E5D883595F8A57F49646E4F5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D8E734EB1AD6C0A900428694 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8E734EA1AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemo.app */,
+				D8E734FF1AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8E734EC1AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D8E734EF1AD6C0A900428694 /* AppDelegate.swift */,
+				D8E7351A1AD6C2B600428694 /* FacebookStyleBar.swift */,
+				D84BAD921AD6E3FA00A58D71 /* SquareCashStyleViewController.swift */,
+				D8E734F61AD6C0A900428694 /* Images.xcassets */,
+				D8E735101AD6C23700428694 /* Main.storyboard */,
+				D8E734F81AD6C0A900428694 /* LaunchScreen.xib */,
+				D8E734ED1AD6C0A900428694 /* Supporting Files */,
+				D8E7350F1AD6C1EC00428694 /* Header.h */,
+				D84BAD8B1AD6D72E00A58D71 /* FacebookStyleViewController.swift */,
+				D84BAD901AD6E16A00A58D71 /* SquareCashStyleBar.swift */,
+			);
+			path = BLKFlexibleHeightBarSwiftDemo;
+			sourceTree = "<group>";
+		};
+		D8E734ED1AD6C0A900428694 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8E735121AD6C27500428694 /* square-cash-icon.png */,
+				D8E735131AD6C27500428694 /* facebook-icon.png */,
+				D8E735141AD6C27500428694 /* ProfilePicture.png */,
+				D8E735151AD6C27500428694 /* Close.png */,
+				D8E734EE1AD6C0A900428694 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8E735021AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8E735051AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests.swift */,
+				D8E735031AD6C0A900428694 /* Supporting Files */,
+			);
+			path = BLKFlexibleHeightBarSwiftDemoTests;
+			sourceTree = "<group>";
+		};
+		D8E735031AD6C0A900428694 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8E735041AD6C0A900428694 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E5D883595F8A57F49646E4F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4C0D015B6C2926112C5057B /* Pods_BLKFlexibleHeightBarSwiftDemo.framework */,
+				6F4A006797BD7C5287319C69 /* Pods_BLKFlexibleHeightBarSwiftDemoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8E734E91AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8E735091AD6C0A900428694 /* Build configuration list for PBXNativeTarget "BLKFlexibleHeightBarSwiftDemo" */;
+			buildPhases = (
+				A4469941406872662C5AFA99 /* Check Pods Manifest.lock */,
+				D8E734E61AD6C0A900428694 /* Sources */,
+				D8E734E71AD6C0A900428694 /* Frameworks */,
+				D8E734E81AD6C0A900428694 /* Resources */,
+				05CB98CF7C33E844306ED2BE /* Copy Pods Resources */,
+				2AD779036B883EAB7B259C1C /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BLKFlexibleHeightBarSwiftDemo;
+			productName = BLKFlexibleHeightBarSwiftDemo;
+			productReference = D8E734EA1AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8E734FE1AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8E7350C1AD6C0A900428694 /* Build configuration list for PBXNativeTarget "BLKFlexibleHeightBarSwiftDemoTests" */;
+			buildPhases = (
+				802E6325B895128C9F7A163D /* Check Pods Manifest.lock */,
+				D8E734FB1AD6C0A900428694 /* Sources */,
+				D8E734FC1AD6C0A900428694 /* Frameworks */,
+				D8E734FD1AD6C0A900428694 /* Resources */,
+				A47548DD544BE1156F167D2F /* Copy Pods Resources */,
+				A31BAF90335E70CD9393B6B3 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8E735011AD6C0A900428694 /* PBXTargetDependency */,
+			);
+			name = BLKFlexibleHeightBarSwiftDemoTests;
+			productName = BLKFlexibleHeightBarSwiftDemoTests;
+			productReference = D8E734FF1AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8E734E21AD6C0A900428694 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Weshapp;
+				TargetAttributes = {
+					D8E734E91AD6C0A900428694 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					D8E734FE1AD6C0A900428694 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = D8E734E91AD6C0A900428694;
+					};
+				};
+			};
+			buildConfigurationList = D8E734E51AD6C0A900428694 /* Build configuration list for PBXProject "BLKFlexibleHeightBarSwiftDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8E734E11AD6C0A900428694;
+			productRefGroup = D8E734EB1AD6C0A900428694 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8E734E91AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemo */,
+				D8E734FE1AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8E734E81AD6C0A900428694 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E735191AD6C27500428694 /* Close.png in Resources */,
+				D8E734FA1AD6C0A900428694 /* LaunchScreen.xib in Resources */,
+				D8E734F71AD6C0A900428694 /* Images.xcassets in Resources */,
+				D8E735181AD6C27500428694 /* ProfilePicture.png in Resources */,
+				D8E735161AD6C27500428694 /* square-cash-icon.png in Resources */,
+				D8E735171AD6C27500428694 /* facebook-icon.png in Resources */,
+				D8E735111AD6C23700428694 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E734FD1AD6C0A900428694 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05CB98CF7C33E844306ED2BE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BLKFlexibleHeightBarSwiftDemo/Pods-BLKFlexibleHeightBarSwiftDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AD779036B883EAB7B259C1C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BLKFlexibleHeightBarSwiftDemo/Pods-BLKFlexibleHeightBarSwiftDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		802E6325B895128C9F7A163D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A31BAF90335E70CD9393B6B3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BLKFlexibleHeightBarSwiftDemoTests/Pods-BLKFlexibleHeightBarSwiftDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4469941406872662C5AFA99 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A47548DD544BE1156F167D2F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BLKFlexibleHeightBarSwiftDemoTests/Pods-BLKFlexibleHeightBarSwiftDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8E734E61AD6C0A900428694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E734F01AD6C0A900428694 /* AppDelegate.swift in Sources */,
+				D84BAD931AD6E3FA00A58D71 /* SquareCashStyleViewController.swift in Sources */,
+				D84BAD8C1AD6D72E00A58D71 /* FacebookStyleViewController.swift in Sources */,
+				D8E7351B1AD6C2B600428694 /* FacebookStyleBar.swift in Sources */,
+				D84BAD911AD6E16A00A58D71 /* SquareCashStyleBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E734FB1AD6C0A900428694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E735061AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8E735011AD6C0A900428694 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8E734E91AD6C0A900428694 /* BLKFlexibleHeightBarSwiftDemo */;
+			targetProxy = D8E735001AD6C0A900428694 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8E734F81AD6C0A900428694 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8E734F91AD6C0A900428694 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8E735071AD6C0A900428694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D8E735081AD6C0A900428694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8E7350A1AD6C0A900428694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1089EABEB5A231324D4B4E6C /* Pods-BLKFlexibleHeightBarSwiftDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BLKFlexibleHeightBarSwiftDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D8E7350B1AD6C0A900428694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30119CC0B623FE83CA7E281D /* Pods-BLKFlexibleHeightBarSwiftDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BLKFlexibleHeightBarSwiftDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D8E7350D1AD6C0A900428694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ABB143E4B5BB1F6A57C300C /* Pods-BLKFlexibleHeightBarSwiftDemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BLKFlexibleHeightBarSwiftDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLKFlexibleHeightBarSwiftDemo.app/BLKFlexibleHeightBarSwiftDemo";
+			};
+			name = Debug;
+		};
+		D8E7350E1AD6C0A900428694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D813B57C4CD1EED4BD02A0F /* Pods-BLKFlexibleHeightBarSwiftDemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BLKFlexibleHeightBarSwiftDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLKFlexibleHeightBarSwiftDemo.app/BLKFlexibleHeightBarSwiftDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8E734E51AD6C0A900428694 /* Build configuration list for PBXProject "BLKFlexibleHeightBarSwiftDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E735071AD6C0A900428694 /* Debug */,
+				D8E735081AD6C0A900428694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8E735091AD6C0A900428694 /* Build configuration list for PBXNativeTarget "BLKFlexibleHeightBarSwiftDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E7350A1AD6C0A900428694 /* Debug */,
+				D8E7350B1AD6C0A900428694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8E7350C1AD6C0A900428694 /* Build configuration list for PBXNativeTarget "BLKFlexibleHeightBarSwiftDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E7350D1AD6C0A900428694 /* Debug */,
+				D8E7350E1AD6C0A900428694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8E734E21AD6C0A900428694 /* Project object */;
+}

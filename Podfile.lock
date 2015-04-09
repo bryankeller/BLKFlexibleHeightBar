@@ -1,0 +1,10 @@
+PODS:
+  - BLKFlexibleHeightBar (1.0.2)
+
+DEPENDENCIES:
+  - BLKFlexibleHeightBar (~> 1.0)
+
+SPEC CHECKSUMS:
+  BLKFlexibleHeightBar: b27572a69633d8e33f1f2bbc486b04d8e86f742d
+
+COCOAPODS: 0.36.3

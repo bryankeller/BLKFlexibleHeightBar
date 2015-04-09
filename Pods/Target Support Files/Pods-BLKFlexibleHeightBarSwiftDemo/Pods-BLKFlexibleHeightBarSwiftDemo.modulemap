@@ -1,0 +1,6 @@
+framework module Pods_BLKFlexibleHeightBarSwiftDemo {
+  umbrella header "Pods-BLKFlexibleHeightBarSwiftDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
