@@ -159,4 +159,20 @@
     }
 }
 
+# pragma mark - forward invocation
+-(id)forwardingTargetForSelector:(SEL)aSelector {
+    if([[self class] instancesRespondToSelector:aSelector]) {
+        return self;
+    }
+
+    return [_forwardDelegate respondsToSelector:aSelector] ? _forwardDelegate : nil;
+}
+
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    return [[self class] instancesRespondToSelector:aSelector] || [_forwardDelegate respondsToSelector:aSelector];
+}
+
+-(BOOL)conformsToProtocol:(Protocol *)aProtocol {
+    return [self conformsToProtocol:aProtocol] || [_forwardDelegate conformsToProtocol:aProtocol];
+}
 @end

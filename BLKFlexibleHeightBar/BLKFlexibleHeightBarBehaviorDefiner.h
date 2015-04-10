@@ -30,6 +30,12 @@
 @interface BLKFlexibleHeightBarBehaviorDefiner : NSObject <UIScrollViewDelegate>
 
 /**
+	The real delegate that implements required methods of UITableViewDelegate and etc.
+ */
+@property(nonatomic, weak) id forwardDelegate;
+
+
+/**
  The `BLKFlexibleHeightBar` instance corresponding with the behavior definer.
  */
 @property (nonatomic, readonly, weak) BLKFlexibleHeightBar *flexibleHeightBar;
