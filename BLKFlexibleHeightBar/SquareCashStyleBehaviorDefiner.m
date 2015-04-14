@@ -28,6 +28,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    [super scrollViewDidScroll: scrollView];
+    
     if(!self.isCurrentlySnapping)
     {
         CGFloat progress = (scrollView.contentOffset.y+scrollView.contentInset.top) / (self.flexibleHeightBar.maximumBarHeight-self.flexibleHeightBar.minimumBarHeight);
