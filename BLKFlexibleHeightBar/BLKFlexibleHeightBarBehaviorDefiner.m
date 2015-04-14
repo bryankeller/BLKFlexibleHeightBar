@@ -159,4 +159,11 @@
     }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint contentOffset = scrollView.contentOffset;
+    scrollView.contentInset = UIEdgeInsetsMake(CGRectGetMaxY(self.flexibleHeightBar.frame), scrollView.contentInset.left, scrollView.contentInset.bottom, scrollView.contentInset.right);
+    scrollView.contentOffset = contentOffset;
+}
+
 @end
