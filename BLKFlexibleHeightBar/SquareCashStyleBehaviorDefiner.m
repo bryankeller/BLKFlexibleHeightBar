@@ -30,7 +30,7 @@
 {
     if(!self.isCurrentlySnapping)
     {
-        CGFloat progress = (scrollView.contentOffset.y+scrollView.contentInset.top) / (self.flexibleHeightBar.maximumBarHeight-self.flexibleHeightBar.minimumBarHeight);
+        CGFloat progress = (scrollView.contentOffset.y + self.flexibleHeightBar.maximumBarHeight) / (self.flexibleHeightBar.maximumBarHeight-self.flexibleHeightBar.minimumBarHeight);
         self.flexibleHeightBar.progress = progress;
         [self.flexibleHeightBar setNeedsLayout];
     }

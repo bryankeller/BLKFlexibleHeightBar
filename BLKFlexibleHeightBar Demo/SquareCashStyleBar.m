@@ -20,6 +20,16 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame andTableView:(UITableView *)tableView
+{
+    if(self = [super initWithFrame:frame andTableView:tableView])
+    {
+        [self configureBar];
+    }
+    
+    return self;
+}
+
 - (void)configureBar
 {
     // Configure bar appearence
