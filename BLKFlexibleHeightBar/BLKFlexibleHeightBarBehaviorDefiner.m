@@ -39,6 +39,7 @@
         _snappingEnabled = YES;
         _currentlySnapping = NO;
         _elasticMaximumHeightAtTop = NO;
+        _snappingAnimateDuration = 0.15;
     }
     
     return self;
@@ -126,7 +127,7 @@
         
         if(snapPosition != MAXFLOAT)
         {
-            [UIView animateWithDuration:0.15 animations:^{
+            [UIView animateWithDuration:self.snappingAnimateDuration animations:^{
                 
                 [self snapToProgress:snapPosition scrollView:scrollView];
                 
