@@ -78,7 +78,7 @@
 # pragma mark - UITableViewDataSource methods
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"This view will be out of place";
+    return @"Sample Header";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
