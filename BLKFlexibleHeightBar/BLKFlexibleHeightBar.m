@@ -138,7 +138,8 @@
 
 - (void)updateTableViewContentInset {
     if (self.frame.size.height <= self.maximumBarHeight) {
-        self.tableView.contentInset = UIEdgeInsetsMake(self.frame.size.height + self.frame.origin.y, 0, 0, 0);
+        UIEdgeInsets currentInsets = self.tableView.contentInset;
+        self.tableView.contentInset = UIEdgeInsetsMake(self.frame.size.height + self.frame.origin.y, currentInsets.left, currentInsets.bottom, currentInsets.right);
     }
 }
 
