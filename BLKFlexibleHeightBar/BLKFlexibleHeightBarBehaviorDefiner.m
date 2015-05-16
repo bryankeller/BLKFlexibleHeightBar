@@ -66,9 +66,8 @@
         
         NSValue *existingRangeValue = key;
         NSRange existingRange = [existingRangeValue rangeValue];
-        
-        BOOL noRangeConflict = (NSIntersectionRange(progressPercentRange, existingRange).length == 0);
-        NSAssert(noRangeConflict, @"progressPercentRange sent to -addSnappingProgressPosition:forProgressPercentRange: intersects a progressPercentRange for an existing progressPosition.");
+
+        NSAssert((NSIntersectionRange(progressPercentRange, existingRange).length == 0), @"progressPercentRange sent to -addSnappingProgressPosition:forProgressPercentRange: intersects a progressPercentRange for an existing progressPosition.");
     }];
     
     NSValue *progressPercentRangeValue = [NSValue valueWithRange:progressPercentRange];
