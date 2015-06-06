@@ -62,13 +62,8 @@
     end = fmax(fmin(end, 1.0), 0.0) * 100.0;
     NSRange progressPercentRange = NSMakeRange(start, end-start);
     
-    [self.snappingPositionsForProgressRanges enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        
-        NSValue *existingRangeValue = key;
-        NSRange existingRange = [existingRangeValue rangeValue];
-        
-        BOOL noRangeConflict = (NSIntersectionRange(progressPercentRange, existingRange).length == 0);
-        NSAssert(noRangeConflict, @"progressPercentRange sent to -addSnappingProgressPosition:forProgressPercentRange: intersects a progressPercentRange for an existing progressPosition.");
+    [self.snappingPositionsForProgressRanges enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {        
+        NSAssert((NSIntersectionRange(progressPercentRange, [key rangeValue]).length == 0), @"progressPercentRange sent to -addSnappingProgressPosition:forProgressPercentRange: intersects a progressPercentRange for an existing progressPosition.");
     }];
     
     NSValue *progressPercentRangeValue = [NSValue valueWithRange:progressPercentRange];
