@@ -97,11 +97,4 @@
     return 100.0;
 }
 
-# pragma mark - UIScrollViewDelegate methods
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView 
-{
-    self.tableView.scrollIndicatorInsets =  UIEdgeInsetsMake(self.myCustomBar.frame.size.height, 0, 0, 0);
-}
-
 @end

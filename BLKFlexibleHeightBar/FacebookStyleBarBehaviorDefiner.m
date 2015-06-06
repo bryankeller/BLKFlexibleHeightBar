@@ -151,6 +151,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    [super scrollViewDidScroll:scrollView];
+    
     if(!self.isCurrentlySnapping)
     {
         CGFloat deltaYOffset = scrollView.contentOffset.y - self.previousYOffset;

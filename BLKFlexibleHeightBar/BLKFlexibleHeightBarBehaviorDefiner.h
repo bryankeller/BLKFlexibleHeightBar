@@ -76,4 +76,23 @@
  */
 - (void)snapWithScrollView:(UIScrollView *)scrollView;
 
+
+/**
+ A UIScrollViewDelegate method implementation that facilitates snapping behavior.
+ Subclass implementations should call super's implementation.
+ */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;
+
+/**
+ A UIScrollViewDelegate method implementation that facilitates snapping behavior.
+ Subclass implementations should call super's implementation.
+ */
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate;
+
+/**
+ A UIScrollViewDelegate method implementation that provides basic UIScrollView indicator inset correction.
+ Subclass implementations should call super's implementation.
+ */
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
+
 @end

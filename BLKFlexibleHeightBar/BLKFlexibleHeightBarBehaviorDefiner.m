@@ -159,4 +159,9 @@
     }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    scrollView.scrollIndicatorInsets =  UIEdgeInsetsMake(CGRectGetHeight(self.flexibleHeightBar.bounds), scrollView.scrollIndicatorInsets.left, scrollView.scrollIndicatorInsets.bottom, scrollView.scrollIndicatorInsets.right);
+}
+
 @end
