@@ -25,4 +25,9 @@
 @property (nonatomic) CGFloat thresholdNegativeDirection;
 @property (nonatomic) CGFloat thresholdPositiveDirection;
 
+
+@property (nonatomic, weak) id scrollerViewDelegate; //UIScrollView
+@property (nonatomic, weak) id tableViewDelegate; //UITableView
+@property (nonatomic, weak) id collectionViewDelegate; //UICollectionView
+
 @end
