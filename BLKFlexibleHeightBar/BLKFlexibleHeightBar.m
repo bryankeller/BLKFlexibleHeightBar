@@ -118,6 +118,13 @@
         }
         
     }];
+	
+	
+	if ([[UIDevice currentDevice].systemVersion compare:@"8.0" options:NSNumericSearch] == NSOrderedAscending) {
+		// iOS 7
+		// Fixes crash https://github.com/bryankeller/BLKFlexibleHeightBar/issues/4
+		[self layoutIfNeeded];
+	}
 }
 
 - (void)applyFloorLayoutAttributes:(BLKFlexibleHeightBarSubviewLayoutAttributes *)floorLayoutAttributes ceilingLayoutAttributes:(BLKFlexibleHeightBarSubviewLayoutAttributes *)ceilingLayoutAttributes toSubview:(UIView *)subview withFloorProgress:(CGFloat)floorProgress ceilingProgress:(CGFloat)ceilingProgress;
