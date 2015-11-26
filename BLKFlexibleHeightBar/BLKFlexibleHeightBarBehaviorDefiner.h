@@ -20,6 +20,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class BLKFlexibleHeightBar;
 
 /**
@@ -33,6 +35,11 @@
  The `BLKFlexibleHeightBar` instance corresponding with the behavior definer.
  */
 @property (nonatomic, readonly, weak) BLKFlexibleHeightBar *flexibleHeightBar;
+
+/**
+ All scroll-related messages will be redirected to this delegate.
+ */
+@property (nonatomic, weak) id<UIScrollViewDelegate> delegate;
 
 /**
  Determines whether snapping is enabled or not. Default value is YES.
@@ -95,4 +102,21 @@
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 
+/**
+ A UIScrollViewDelegate methods implementations for redirecting to delegate object.
+ Subclass implementations should call super's implementation.
+ */
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView;
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView;
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset;
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView;
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView;
+- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView;
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view;
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale;
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView;
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView;
+
 @end
+
+NS_ASSUME_NONNULL_END

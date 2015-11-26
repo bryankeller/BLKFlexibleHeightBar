@@ -149,6 +149,11 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     [self snapWithScrollView:scrollView];
+    
+    if ([self.delegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)])
+    {
+        [self.delegate scrollViewDidEndDecelerating:scrollView];
+    }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
@@ -157,11 +162,105 @@
     {
         [self snapWithScrollView:scrollView];
     }
+    
+    if ([self.delegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)])
+    {
+        [self.delegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     scrollView.scrollIndicatorInsets =  UIEdgeInsetsMake(CGRectGetHeight(self.flexibleHeightBar.bounds), scrollView.scrollIndicatorInsets.left, scrollView.scrollIndicatorInsets.bottom, scrollView.scrollIndicatorInsets.right);
+    
+    if ([self.delegate respondsToSelector:@selector(scrollViewDidScroll:)])
+    {
+        [self.delegate scrollViewDidScroll:scrollView];
+    }
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView;
+{
+    if ([self.delegate respondsToSelector:@selector(scrollViewDidZoom:)])
+    {
+        [self.delegate scrollViewDidZoom:scrollView];
+    }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView;
+{
+    if ([self.delegate respondsToSelector:@selector(scrollViewWillBeginDragging:)])
+    {
+        [self.delegate scrollViewWillBeginDragging:scrollView];
+    }
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset;
+{
+    if ([self.delegate respondsToSelector:@selector(scrollViewWillEndDragging:withVelocity:targetContentOffset:)])
+    {
+        [self.delegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
+    }
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView;
+{
+    if ([self.delegate respondsToSelector:@selector(scrollViewWillBeginDecelerating:)])
+    {
+        [self.delegate scrollViewWillBeginDecelerating:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView;
+{
+    if ([self.delegate respondsToSelector:@selector(scrollViewDidEndScrollingAnimation:)])
+    {
+        [self.delegate scrollViewDidEndScrollingAnimation:scrollView];
+    }
+}
+
+- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView;
+{
+    if ([self.delegate respondsToSelector:@selector(viewForZoomingInScrollView:)])
+    {
+        return [self.delegate viewForZoomingInScrollView:scrollView];
+    }
+    
+    return nil;
+}
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view;
+{
+    if ([self.delegate respondsToSelector:@selector(scrollViewWillBeginZooming:withView:)])
+    {
+        [self.delegate scrollViewWillBeginZooming:scrollView withView:view];
+    }
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale;
+{
+    if ([self.delegate respondsToSelector:@selector(scrollViewDidEndZooming:withView:atScale:)])
+    {
+        [self.delegate scrollViewDidEndZooming:scrollView withView:view atScale:scale];
+    }
+}
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView;
+{
+    if ([self.delegate respondsToSelector:@selector(scrollViewShouldScrollToTop:)])
+    {
+        return [self.delegate scrollViewShouldScrollToTop:scrollView];
+    }
+    
+    return YES;
+}
+
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView;
+{
+    if ([self.delegate respondsToSelector:@selector(scrollViewDidScrollToTop:)])
+    {
+        [self.delegate scrollViewDidScrollToTop:scrollView];
+    }
 }
 
 @end
