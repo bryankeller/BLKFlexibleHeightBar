@@ -150,10 +150,8 @@
 {
     [self snapWithScrollView:scrollView];
     
-    if ([self.delegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)])
-    {
-        [self.delegate scrollViewDidEndDecelerating:scrollView];
-    }
+    NSInvocation* invocation = [self invocationForSelector:@selector(scrollViewDidEndDecelerating:) scrollView:scrollView];
+    [invocation invoke];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
@@ -163,104 +161,68 @@
         [self snapWithScrollView:scrollView];
     }
     
-    if ([self.delegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)])
-    {
-        [self.delegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
-    }
+    NSInvocation* invocation = [self invocationForSelector:@selector(scrollViewDidEndDragging:willDecelerate:) scrollView:scrollView];
+    [invocation setArgument:&decelerate atIndex:3];
+    [invocation invoke];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     scrollView.scrollIndicatorInsets =  UIEdgeInsetsMake(CGRectGetHeight(self.flexibleHeightBar.bounds), scrollView.scrollIndicatorInsets.left, scrollView.scrollIndicatorInsets.bottom, scrollView.scrollIndicatorInsets.right);
     
-    if ([self.delegate respondsToSelector:@selector(scrollViewDidScroll:)])
-    {
-        [self.delegate scrollViewDidScroll:scrollView];
-    }
+    NSInvocation* invocation = [self invocationForSelector:@selector(scrollViewDidScroll:) scrollView:scrollView];
+    [invocation invoke];
 }
 
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView;
-{
-    if ([self.delegate respondsToSelector:@selector(scrollViewDidZoom:)])
-    {
-        [self.delegate scrollViewDidZoom:scrollView];
-    }
-}
+# pragma mark - Message forwarding helper
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView;
+- (NSInvocation*)invocationForSelector:(SEL)selector scrollView:(UIScrollView*)scrollView
 {
-    if ([self.delegate respondsToSelector:@selector(scrollViewWillBeginDragging:)])
+    if ([self.delegate respondsToSelector:selector])
     {
-        [self.delegate scrollViewWillBeginDragging:scrollView];
-    }
-}
+        NSMethodSignature* signature = [self.delegate.class instanceMethodSignatureForSelector:selector];
+        NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:signature];
+        [invocation setTarget:self.delegate];
+        [invocation setSelector:selector];
+        [invocation setArgument:&scrollView atIndex:2];
 
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset;
-{
-    if ([self.delegate respondsToSelector:@selector(scrollViewWillEndDragging:withVelocity:targetContentOffset:)])
-    {
-        [self.delegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
-    }
-}
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView;
-{
-    if ([self.delegate respondsToSelector:@selector(scrollViewWillBeginDecelerating:)])
-    {
-        [self.delegate scrollViewWillBeginDecelerating:scrollView];
-    }
-}
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView;
-{
-    if ([self.delegate respondsToSelector:@selector(scrollViewDidEndScrollingAnimation:)])
-    {
-        [self.delegate scrollViewDidEndScrollingAnimation:scrollView];
-    }
-}
-
-- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView;
-{
-    if ([self.delegate respondsToSelector:@selector(viewForZoomingInScrollView:)])
-    {
-        return [self.delegate viewForZoomingInScrollView:scrollView];
+        return invocation;
     }
     
     return nil;
 }
 
-- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view;
+# pragma mark - Message forwarding
+
+- (void)forwardInvocation:(NSInvocation*)anInvocation
 {
-    if ([self.delegate respondsToSelector:@selector(scrollViewWillBeginZooming:withView:)])
+    if ([self.delegate respondsToSelector:anInvocation.selector])
     {
-        [self.delegate scrollViewWillBeginZooming:scrollView withView:view];
+        [anInvocation invokeWithTarget:self.delegate];
     }
 }
 
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale;
+- (NSMethodSignature*)methodSignatureForSelector:(SEL)aSelector
 {
-    if ([self.delegate respondsToSelector:@selector(scrollViewDidEndZooming:withView:atScale:)])
+    NSMethodSignature *first = [super methodSignatureForSelector:aSelector];
+    NSMethodSignature *second = [(NSObject*)self.delegate methodSignatureForSelector:aSelector];
+    
+    if (first)
     {
-        [self.delegate scrollViewDidEndZooming:scrollView withView:view atScale:scale];
+        return first;
     }
-}
-
-- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView;
-{
-    if ([self.delegate respondsToSelector:@selector(scrollViewShouldScrollToTop:)])
+    else if (second)
     {
-        return [self.delegate scrollViewShouldScrollToTop:scrollView];
+        return second;
     }
     
-    return YES;
+    return nil;
 }
 
-- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView;
+- (BOOL)respondsToSelector:(SEL)aSelector
 {
-    if ([self.delegate respondsToSelector:@selector(scrollViewDidScrollToTop:)])
-    {
-        [self.delegate scrollViewDidScrollToTop:scrollView];
-    }
+    BOOL result = [super respondsToSelector:aSelector] || [self.delegate respondsToSelector:aSelector];
+    return result;
 }
 
 @end
