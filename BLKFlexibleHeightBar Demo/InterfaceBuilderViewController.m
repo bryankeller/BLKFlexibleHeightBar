@@ -46,18 +46,22 @@
     // Setup layout attributes
     BLKFlexibleHeightBarSubviewLayoutAttributes *initialCloseButtonLayoutAttributes = [[BLKFlexibleHeightBarSubviewLayoutAttributes alloc] init];
     initialCloseButtonLayoutAttributes.alpha = 1.0;
+    initialCloseButtonLayoutAttributes.shouldAffectPositioning = NO;
     [self.closeButton addLayoutAttributes:initialCloseButtonLayoutAttributes forProgress:0.0];
     
     BLKFlexibleHeightBarSubviewLayoutAttributes *finalCloseButtonLayoutAttributes = [[BLKFlexibleHeightBarSubviewLayoutAttributes alloc] initWithExistingLayoutAttributes:initialCloseButtonLayoutAttributes];
     finalCloseButtonLayoutAttributes.alpha = 0.0;
+    finalCloseButtonLayoutAttributes.shouldAffectPositioning = NO;
     [self.closeButton addLayoutAttributes:finalCloseButtonLayoutAttributes forProgress:1.0];
     
     BLKFlexibleHeightBarSubviewLayoutAttributes *initialTextFieldLayoutAttributes = [[BLKFlexibleHeightBarSubviewLayoutAttributes alloc] init];
     initialTextFieldLayoutAttributes.alpha = 1.0;
+    initialTextFieldLayoutAttributes.shouldAffectPositioning = NO;
     [self.textField addLayoutAttributes:initialTextFieldLayoutAttributes forProgress:0.0];
     
     BLKFlexibleHeightBarSubviewLayoutAttributes *finalTextFieldLayoutAttributes = [[BLKFlexibleHeightBarSubviewLayoutAttributes alloc] initWithExistingLayoutAttributes:initialTextFieldLayoutAttributes];
     finalTextFieldLayoutAttributes.alpha = 0.0;
+    finalTextFieldLayoutAttributes.shouldAffectPositioning = NO;
     [self.textField addLayoutAttributes:finalTextFieldLayoutAttributes forProgress:1.0];
 }
 

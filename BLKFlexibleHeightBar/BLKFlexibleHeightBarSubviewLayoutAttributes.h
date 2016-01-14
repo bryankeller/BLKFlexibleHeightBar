@@ -91,7 +91,8 @@
 - (instancetype)initWithExistingLayoutAttributes:(BLKFlexibleHeightBarSubviewLayoutAttributes *)layoutAttributes;
 
 /**
- This method is used to define whether or not the argument keypath will be changed on a subview because it was set on the attributes.
+ This setting can disable the effect of frame, bounds, size, center, transform, transform3D. Defaults to YES, meaning that these properties will be taken into account.
  */
-- (BOOL)shouldAffectKeypath:(NSString*)keypath;
+@property (nonatomic) BOOL shouldAffectPositioning;
+
 @end

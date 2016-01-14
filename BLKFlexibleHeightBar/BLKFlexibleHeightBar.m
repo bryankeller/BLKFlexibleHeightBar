@@ -141,25 +141,10 @@
         denominator = ceilingProgress-floorProgress;
     }
     CGFloat relativeProgress = numerator/denominator;
-
-    BOOL affectsTransform = ([floorLayoutAttributes shouldAffectKeypath:@"transform"] || [ceilingLayoutAttributes shouldAffectKeypath:@"transform"] ||
-                             [floorLayoutAttributes shouldAffectKeypath:@"transform3D"] || [ceilingLayoutAttributes shouldAffectKeypath:@"transform3D"]);
     
-    BOOL affectsFrame = ([floorLayoutAttributes shouldAffectKeypath:@"frame"] || [ceilingLayoutAttributes shouldAffectKeypath:@"frame"] ||
-                         [floorLayoutAttributes shouldAffectKeypath:@"size"] || [ceilingLayoutAttributes shouldAffectKeypath:@"size"] ||
-                         [floorLayoutAttributes shouldAffectKeypath:@"bounds"] || [ceilingLayoutAttributes shouldAffectKeypath:@"bounds"]);
-    
-    BOOL affectsCenter = ([floorLayoutAttributes shouldAffectKeypath:@"center"] || [ceilingLayoutAttributes shouldAffectKeypath:@"center"]);
-    
-    BOOL affectsAlpha = ([floorLayoutAttributes shouldAffectKeypath:@"alpha"] || [ceilingLayoutAttributes shouldAffectKeypath:@"alpha"]);
-    
-    BOOL affectsZIndex = ([floorLayoutAttributes shouldAffectKeypath:@"zIndex"] || [ceilingLayoutAttributes shouldAffectKeypath:@"zIndex"]);
-    
-    BOOL affectsHidden = ([floorLayoutAttributes shouldAffectKeypath:@"hidden"] || [ceilingLayoutAttributes shouldAffectKeypath:@"hidden"]);
-    
-    // Interpolate & apply CA3DTransform
-    CATransform3D transform3D = subview.layer.transform;
-    if (affectsTransform) {
+    if (floorLayoutAttributes.shouldAffectPositioning || ceilingLayoutAttributes.shouldAffectPositioning) {
+        // Interpolate CA3DTransform
+        CATransform3D transform3D;
         transform3D.m11 = [self interpolateFromValue:floorLayoutAttributes.transform3D.m11 toValue:ceilingLayoutAttributes.transform3D.m11 withProgress:relativeProgress];
         transform3D.m12 = [self interpolateFromValue:floorLayoutAttributes.transform3D.m12 toValue:ceilingLayoutAttributes.transform3D.m12 withProgress:relativeProgress];
         transform3D.m13 = [self interpolateFromValue:floorLayoutAttributes.transform3D.m13 toValue:ceilingLayoutAttributes.transform3D.m13 withProgress:relativeProgress];
@@ -176,12 +161,9 @@
         transform3D.m42 = [self interpolateFromValue:floorLayoutAttributes.transform3D.m42 toValue:ceilingLayoutAttributes.transform3D.m42 withProgress:relativeProgress];
         transform3D.m43 = [self interpolateFromValue:floorLayoutAttributes.transform3D.m43 toValue:ceilingLayoutAttributes.transform3D.m43 withProgress:relativeProgress];
         transform3D.m44 = [self interpolateFromValue:floorLayoutAttributes.transform3D.m44 toValue:ceilingLayoutAttributes.transform3D.m44 withProgress:relativeProgress];
-        subview.layer.transform = transform3D;
-    }
-    
-    // Interpolate & apply frame
-    if (affectsFrame) {
-        CGRect frame = subview.frame;
+        
+        // Interpolate frame
+        CGRect frame;
         if(!CGRectEqualToRect(floorLayoutAttributes.frame, CGRectNull) && CGRectEqualToRect(ceilingLayoutAttributes.frame, CGRectNull))
         {
             frame = floorLayoutAttributes.frame;
@@ -199,49 +181,37 @@
             frame = CGRectMake(x, y, width, height);
         }
         
+        // Interpolate center
+        CGFloat x = [self interpolateFromValue:floorLayoutAttributes.center.x toValue:ceilingLayoutAttributes.center.x withProgress:relativeProgress];
+        CGFloat y = [self interpolateFromValue:floorLayoutAttributes.center.y toValue:ceilingLayoutAttributes.center.y withProgress:relativeProgress];
+        CGPoint center = CGPointMake(x, y);
+        
+        // Interpolate bounds
+        x = [self interpolateFromValue:CGRectGetMinX(floorLayoutAttributes.bounds) toValue:CGRectGetMinX(ceilingLayoutAttributes.bounds) withProgress:relativeProgress];
+        y = [self interpolateFromValue:CGRectGetMinY(floorLayoutAttributes.bounds) toValue:CGRectGetMinY(ceilingLayoutAttributes.bounds) withProgress:relativeProgress];
+        CGFloat width = [self interpolateFromValue:CGRectGetWidth(floorLayoutAttributes.bounds) toValue:CGRectGetWidth(ceilingLayoutAttributes.bounds) withProgress:relativeProgress];
+        CGFloat height = [self interpolateFromValue:CGRectGetHeight(floorLayoutAttributes.bounds) toValue:CGRectGetHeight(ceilingLayoutAttributes.bounds) withProgress:relativeProgress];
+        CGRect bounds = CGRectMake(x, y, width, height);
+        
+        // Apply updated attributes
+        subview.layer.transform = transform3D;
         if(CATransform3DIsIdentity(transform3D))
         {
             subview.frame = frame;
         }
-    }
-    
-    // Interpolate & apply center
-    if (affectsCenter) {
-        CGPoint center = subview.center;
-        CGFloat x = [self interpolateFromValue:floorLayoutAttributes.center.x toValue:ceilingLayoutAttributes.center.x withProgress:relativeProgress];
-        CGFloat y = [self interpolateFromValue:floorLayoutAttributes.center.y toValue:ceilingLayoutAttributes.center.y withProgress:relativeProgress];
-        center = CGPointMake(x, y);
         subview.center = center;
-    }
-    
-    // Interpolate & apply bounds
-    if (affectsFrame) {
-        CGRect bounds = subview.bounds;
-        CGFloat x = [self interpolateFromValue:CGRectGetMinX(floorLayoutAttributes.bounds) toValue:CGRectGetMinX(ceilingLayoutAttributes.bounds) withProgress:relativeProgress];
-        CGFloat y = [self interpolateFromValue:CGRectGetMinY(floorLayoutAttributes.bounds) toValue:CGRectGetMinY(ceilingLayoutAttributes.bounds) withProgress:relativeProgress];
-        CGFloat width = [self interpolateFromValue:CGRectGetWidth(floorLayoutAttributes.bounds) toValue:CGRectGetWidth(ceilingLayoutAttributes.bounds) withProgress:relativeProgress];
-        CGFloat height = [self interpolateFromValue:CGRectGetHeight(floorLayoutAttributes.bounds) toValue:CGRectGetHeight(ceilingLayoutAttributes.bounds) withProgress:relativeProgress];
-        bounds = CGRectMake(x, y, width, height);
         subview.bounds = bounds;
-        NSLog(@"%@ bounds: %@", subview, NSStringFromCGRect(subview.bounds));
     }
     
-    // Interpolate & apply alpha
-    if (affectsAlpha) {
-        CGFloat alpha = [self interpolateFromValue:floorLayoutAttributes.alpha toValue:ceilingLayoutAttributes.alpha withProgress:relativeProgress];
-        subview.alpha = alpha;
-    }
+    // Interpolate alpha
+    CGFloat alpha = [self interpolateFromValue:floorLayoutAttributes.alpha toValue:ceilingLayoutAttributes.alpha withProgress:relativeProgress];
     
-    // Apply zIndex
-    if (affectsZIndex) {
-        subview.layer.zPosition = floorLayoutAttributes.zIndex;
-    }
-    
-    // Apply hidden
-    if (affectsHidden) {
-        subview.hidden = floorLayoutAttributes.isHidden;
-    }
+    // Apply other updated attributes
+    subview.alpha = alpha;
+    subview.layer.zPosition = floorLayoutAttributes.zIndex;
+    subview.hidden = floorLayoutAttributes.isHidden;
 }
+
 
 - (CGFloat)interpolateFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue withProgress:(CGFloat)progress
 {
