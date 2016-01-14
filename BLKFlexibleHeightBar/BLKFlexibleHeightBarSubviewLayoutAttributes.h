@@ -83,7 +83,6 @@
  */
 @property (nonatomic, getter=isHidden) BOOL hidden;
 
-
 /**
  A convenience initializer that returns layout attributes with the same property values as the specified layout attributes, or nil of initialization fails.
  @param The existing layout attributes.
@@ -91,4 +90,8 @@
  */
 - (instancetype)initWithExistingLayoutAttributes:(BLKFlexibleHeightBarSubviewLayoutAttributes *)layoutAttributes;
 
+/**
+ This method is used to define whether or not the argument keypath will be changed on a subview because it was set on the attributes.
+ */
+- (BOOL)shouldAffectKeypath:(NSString*)keypath;
 @end

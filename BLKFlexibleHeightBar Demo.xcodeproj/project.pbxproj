@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		929B98071C479B750078A5D1 /* InterfaceBuilderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929B98061C479B750078A5D1 /* InterfaceBuilderViewController.m */; };
+		929B980A1C47A2310078A5D1 /* InterfaceBuilderBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 929B98091C47A2310078A5D1 /* InterfaceBuilderBar.m */; };
+		929B980D1C47A3440078A5D1 /* InterfaceBuilderBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = 929B980C1C47A3440078A5D1 /* InterfaceBuilderBehaviorDefiner.m */; };
 		930EBF891A84AB4B00A67CCA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 930EBF881A84AB4B00A67CCA /* main.m */; };
 		930EBF8C1A84AB4B00A67CCA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 930EBF8B1A84AB4B00A67CCA /* AppDelegate.m */; };
 		930EBF8F1A84AB4B00A67CCA /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930EBF8E1A84AB4B00A67CCA /* DemoViewController.m */; };
@@ -42,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		929B98051C479B750078A5D1 /* InterfaceBuilderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceBuilderViewController.h; sourceTree = "<group>"; };
+		929B98061C479B750078A5D1 /* InterfaceBuilderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceBuilderViewController.m; sourceTree = "<group>"; };
+		929B98081C47A2310078A5D1 /* InterfaceBuilderBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceBuilderBar.h; sourceTree = "<group>"; };
+		929B98091C47A2310078A5D1 /* InterfaceBuilderBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceBuilderBar.m; sourceTree = "<group>"; };
+		929B980B1C47A3440078A5D1 /* InterfaceBuilderBehaviorDefiner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceBuilderBehaviorDefiner.h; sourceTree = "<group>"; };
+		929B980C1C47A3440078A5D1 /* InterfaceBuilderBehaviorDefiner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceBuilderBehaviorDefiner.m; sourceTree = "<group>"; };
 		930EBF831A84AB4B00A67CCA /* BLKFlexibleHeightBar Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLKFlexibleHeightBar Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		930EBF871A84AB4B00A67CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		930EBF881A84AB4B00A67CCA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -139,6 +148,12 @@
 				930EBF931A84AB4B00A67CCA /* Images.xcassets */,
 				930EBF951A84AB4B00A67CCA /* LaunchScreen.xib */,
 				930EBF861A84AB4B00A67CCA /* Supporting Files */,
+				929B98051C479B750078A5D1 /* InterfaceBuilderViewController.h */,
+				929B98061C479B750078A5D1 /* InterfaceBuilderViewController.m */,
+				929B980B1C47A3440078A5D1 /* InterfaceBuilderBehaviorDefiner.h */,
+				929B980C1C47A3440078A5D1 /* InterfaceBuilderBehaviorDefiner.m */,
+				929B98081C47A2310078A5D1 /* InterfaceBuilderBar.h */,
+				929B98091C47A2310078A5D1 /* InterfaceBuilderBar.m */,
 			);
 			path = "BLKFlexibleHeightBar Demo";
 			sourceTree = "<group>";
@@ -310,6 +325,7 @@
 				930EBF8C1A84AB4B00A67CCA /* AppDelegate.m in Sources */,
 				9353CB231AABB76C003E134E /* FacebookStyleViewController.m in Sources */,
 				930EBF891A84AB4B00A67CCA /* main.m in Sources */,
+				929B980D1C47A3440078A5D1 /* InterfaceBuilderBehaviorDefiner.m in Sources */,
 				9353CB1D1AA9B230003E134E /* FacebookStyleBarBehaviorDefiner.m in Sources */,
 				930EBFB41A84ABFC00A67CCA /* BLKFlexibleHeightBar.m in Sources */,
 				930EBFB51A84ABFC00A67CCA /* BLKFlexibleHeightBarSubviewLayoutAttributes.m in Sources */,
@@ -317,7 +333,9 @@
 				9371171B1A96F3CC00B26476 /* SquareCashStyleBar.m in Sources */,
 				9353CB201AAA372E003E134E /* SquareCashStyleBehaviorDefiner.m in Sources */,
 				9353CB261AABB786003E134E /* SquareCashStyleViewController.m in Sources */,
+				929B98071C479B750078A5D1 /* InterfaceBuilderViewController.m in Sources */,
 				9353CB2D1AABBE14003E134E /* FacebookStyleBar.m in Sources */,
+				929B980A1C47A2310078A5D1 /* InterfaceBuilderBar.m in Sources */,
 				930EBFB61A84ABFC00A67CCA /* BLKDelegateSplitter.m in Sources */,
 				93ED25451A92C44A00DBCAA8 /* BLKFlexibleHeightBarBehaviorDefiner.m in Sources */,
 			);

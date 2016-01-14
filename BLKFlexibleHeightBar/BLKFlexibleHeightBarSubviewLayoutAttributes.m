@@ -19,12 +19,20 @@
 
 #import "BLKFlexibleHeightBarSubviewLayoutAttributes.h"
 
+@interface BLKFlexibleHeightBarSubviewLayoutAttributes ()
+{
+    NSMutableArray *_keypathsToChange;
+}
+@end
+
 @implementation BLKFlexibleHeightBarSubviewLayoutAttributes
 
 - (instancetype)init
 {
     if(self = [super init])
     {
+        _keypathsToChange = [NSMutableArray new];
+        
         _frame = CGRectZero;
         _bounds = CGRectZero;
         _center = CGPointZero;
@@ -67,6 +75,8 @@
     _center = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
     _size = CGSizeMake(CGRectGetWidth(_frame), CGRectGetHeight(_frame));
     _bounds = CGRectMake(CGRectGetMinX(_bounds), CGRectGetMinY(_bounds), _size.width, _size.height);
+    
+    [self _addKeypathToChange:@"frame"];
 }
 
 - (void)setBounds:(CGRect)bounds
@@ -76,6 +86,8 @@
     _bounds = bounds;
 
     _size = CGSizeMake(CGRectGetWidth(_bounds), CGRectGetHeight(_bounds));
+    
+    [self _addKeypathToChange:@"bounds"];
 }
 
 - (void)setCenter:(CGPoint)center
@@ -86,6 +98,8 @@
     {
         _frame = CGRectMake(center.x-CGRectGetMidX(_bounds), center.y-CGRectGetMidY(_bounds), CGRectGetWidth(_frame), CGRectGetHeight(_frame));
     }
+    
+    [self _addKeypathToChange:@"center"];
 }
 
 - (void)setSize:(CGSize)size
@@ -98,6 +112,8 @@
     }
     
     _bounds = CGRectMake(CGRectGetMinX(_bounds), CGRectGetMinY(_bounds), size.width, size.height);
+    
+    [self _addKeypathToChange:@"size"];
 }
 
 - (void)setTransform3D:(CATransform3D)transform3D
@@ -110,6 +126,8 @@
     {
         _frame = CGRectNull;
     }
+    
+    [self _addKeypathToChange:@"transform3D"];
 }
 
 - (void)setTransform:(CGAffineTransform)transform
@@ -122,6 +140,47 @@
     {
         _frame = CGRectNull;
     }
+    
+    [self _addKeypathToChange:@"transform"];
+}
+
+- (void)setAlpha:(CGFloat)alpha
+{
+    _alpha = alpha;
+    
+    [self _addKeypathToChange:@"alpha"];
+}
+
+- (void)setZIndex:(NSInteger)zIndex
+{
+    _zIndex = zIndex;
+    
+    [self _addKeypathToChange:@"zIndex"];
+}
+
+- (void)setHidden:(BOOL)hidden
+{
+    _hidden = hidden;
+    
+    [self _addKeypathToChange:@"hidden"];
+}
+
+- (BOOL)shouldAffectKeypath:(NSString *)keypath
+{
+    return YES;
+    for (NSString *kp in _keypathsToChange) {
+        if ([kp isEqualToString:keypath]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+#pragma mark - Private
+
+- (void)_addKeypathToChange:(NSString *)keypath
+{
+    [_keypathsToChange addObject:keypath];
 }
 
 @end
