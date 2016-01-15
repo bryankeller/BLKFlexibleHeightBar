@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ2-yu-JhN">
-                                <rect key="frame" x="168" y="385" width="114" height="30"/>
+                                <rect key="frame" x="318" y="358" width="114" height="30"/>
                                 <state key="normal" title="Interface Builder"/>
                                 <connections>
                                     <segue destination="EQ1-hj-Emj" kind="presentation" id="P0g-WK-0kW"/>
@@ -75,8 +75,8 @@
                             <constraint firstAttribute="trailing" secondItem="pMC-ZW-gWS" secondAttribute="trailing" constant="16" id="CvR-cU-HXs"/>
                             <constraint firstItem="pMC-ZW-gWS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="FUe-QY-tw4"/>
                             <constraint firstItem="pMC-ZW-gWS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JHd-yC-UMG"/>
-                            <constraint firstItem="fJ2-yu-JhN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="KeS-29-gE6"/>
-                            <constraint firstItem="fJ2-yu-JhN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-75" id="Prb-Dg-kYk"/>
+                            <constraint firstItem="fJ2-yu-JhN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="73" id="KeS-29-gE6"/>
+                            <constraint firstItem="fJ2-yu-JhN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="75" id="Prb-Dg-kYk"/>
                             <constraint firstAttribute="centerX" secondItem="Omr-0y-iOl" secondAttribute="centerX" constant="-75" id="QUX-7K-WqX"/>
                             <constraint firstAttribute="centerX" secondItem="613-nw-wru" secondAttribute="centerX" constant="75" id="dOG-wr-GnI"/>
                             <constraint firstAttribute="centerY" secondItem="613-nw-wru" secondAttribute="centerY" id="kDT-Z8-tFS"/>
@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="258" y="305"/>
         </scene>
-        <!--Interface Builder View Controller-->
+        <!--Facebook Style Interface Builder View Controller-->
         <scene sceneID="cAb-t7-LWU">
             <objects>
-                <viewController id="EQ1-hj-Emj" customClass="InterfaceBuilderViewController" sceneMemberID="viewController">
+                <viewController id="EQ1-hj-Emj" customClass="FacebookStyleInterfaceBuilderViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8rS-bD-bhb"/>
                         <viewControllerLayoutGuide type="bottom" id="Wec-Kh-C03"/>
@@ -113,18 +113,17 @@
                                     <outlet property="delegate" destination="EQ1-hj-Emj" id="fzR-H1-n2S"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaX-sB-jZ9" customClass="InterfaceBuilderBar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaX-sB-jZ9" customClass="FacebookStyleInterfaceBuilderTopBar">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGe-SE-YXz">
-                                        <rect key="frame" x="0.0" y="63" width="600" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="JT0-FI-Rwn"/>
-                                        </constraints>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2u-iB-2YE" userLabel="Background View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                        <color key="backgroundColor" red="0.30196078430000001" green="0.41960784309999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sv-sp-sGm">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sv-sp-sGm">
                                         <rect key="frame" x="8" y="26" width="540" height="30"/>
+                                        <color key="backgroundColor" red="0.21568627450980393" green="0.27058823529411763" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.54509803921568623" green="0.60392156862745094" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -140,38 +139,92 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.40000000000000002" green="1" blue="0.40000000000000002" alpha="0.39570552147239263" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="m9P-sy-0QO" secondAttribute="trailing" constant="8" id="0yv-zv-tpu"/>
-                                    <constraint firstAttribute="trailing" secondItem="DGe-SE-YXz" secondAttribute="trailing" id="4N5-CP-MYO"/>
                                     <constraint firstAttribute="height" constant="64" id="936-Oh-FnC"/>
-                                    <constraint firstAttribute="bottom" secondItem="DGe-SE-YXz" secondAttribute="bottom" id="Bw1-UJ-pIe"/>
-                                    <constraint firstItem="DGe-SE-YXz" firstAttribute="leading" secondItem="DaX-sB-jZ9" secondAttribute="leading" id="TBT-Pm-bbl"/>
+                                    <constraint firstItem="m9P-sy-0QO" firstAttribute="leading" secondItem="D2u-iB-2YE" secondAttribute="trailing" id="YJX-R5-5Qu"/>
+                                    <constraint firstAttribute="bottom" secondItem="D2u-iB-2YE" secondAttribute="bottom" id="bNI-vj-YCx"/>
                                     <constraint firstAttribute="bottom" secondItem="9sv-sp-sGm" secondAttribute="bottom" constant="8" id="bcK-a6-Rlc"/>
                                     <constraint firstItem="9sv-sp-sGm" firstAttribute="leading" secondItem="DaX-sB-jZ9" secondAttribute="leading" constant="8" id="dSL-Bh-5HP"/>
                                     <constraint firstAttribute="bottom" secondItem="m9P-sy-0QO" secondAttribute="bottom" constant="8" id="elx-nK-vU7"/>
+                                    <constraint firstItem="D2u-iB-2YE" firstAttribute="leading" secondItem="DaX-sB-jZ9" secondAttribute="leading" id="i4T-Z1-4JI"/>
                                     <constraint firstItem="m9P-sy-0QO" firstAttribute="leading" secondItem="9sv-sp-sGm" secondAttribute="trailing" constant="8" id="krh-wT-pfT"/>
+                                    <constraint firstAttribute="trailing" secondItem="D2u-iB-2YE" secondAttribute="trailing" id="slM-Xx-gGR"/>
+                                    <constraint firstItem="D2u-iB-2YE" firstAttribute="top" secondItem="DaX-sB-jZ9" secondAttribute="top" id="xKa-bP-xLj"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YJX-R5-5Qu"/>
+                                    </mask>
+                                </variation>
                                 <connections>
+                                    <outlet property="closeButton" destination="m9P-sy-0QO" id="HL9-aU-mDJ"/>
                                     <outlet property="heightConstraint" destination="936-Oh-FnC" id="Kl1-h2-mmD"/>
+                                    <outlet property="textField" destination="9sv-sp-sGm" id="Ub4-kC-CCq"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKX-Dk-zAU" userLabel="Bottom Bar" customClass="FacebookStyleInterfaceBuilderBottomBar">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDE-l6-PBa" userLabel="Background View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <color key="backgroundColor" red="0.30196078430000001" green="0.41960784309999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POt-fU-6fg">
+                                        <rect key="frame" x="15" y="11" width="22" height="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhr-iI-g1b">
+                                        <rect key="frame" x="563" y="11" width="22" height="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="lhr-iI-g1b" firstAttribute="centerY" secondItem="LKX-Dk-zAU" secondAttribute="centerY" id="2NZ-9R-cSC"/>
+                                    <constraint firstItem="POt-fU-6fg" firstAttribute="centerY" secondItem="LKX-Dk-zAU" secondAttribute="centerY" id="BiD-Vi-Fth"/>
+                                    <constraint firstItem="lhr-iI-g1b" firstAttribute="top" secondItem="LKX-Dk-zAU" secondAttribute="top" constant="11" id="Eax-Xy-PKF"/>
+                                    <constraint firstItem="cDE-l6-PBa" firstAttribute="top" secondItem="LKX-Dk-zAU" secondAttribute="top" id="V38-OC-DZM"/>
+                                    <constraint firstAttribute="bottom" secondItem="cDE-l6-PBa" secondAttribute="bottom" id="cz4-0G-kGe"/>
+                                    <constraint firstAttribute="trailing" secondItem="lhr-iI-g1b" secondAttribute="trailing" constant="15" id="h00-kT-ebe"/>
+                                    <constraint firstItem="POt-fU-6fg" firstAttribute="top" secondItem="LKX-Dk-zAU" secondAttribute="top" constant="11" id="jvm-Fk-EP3"/>
+                                    <constraint firstAttribute="trailing" secondItem="cDE-l6-PBa" secondAttribute="trailing" id="kSm-jl-ecI"/>
+                                    <constraint firstItem="POt-fU-6fg" firstAttribute="leading" secondItem="LKX-Dk-zAU" secondAttribute="leading" constant="15" id="mkP-kg-Ta0"/>
+                                    <constraint firstItem="cDE-l6-PBa" firstAttribute="leading" secondItem="LKX-Dk-zAU" secondAttribute="leading" id="uBN-Rm-22d"/>
+                                    <constraint firstAttribute="height" constant="44" id="zoO-rU-D6P"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BiD-Vi-Fth"/>
+                                        <exclude reference="2NZ-9R-cSC"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="firstButton" destination="POt-fU-6fg" id="nwV-J1-vhx"/>
+                                    <outlet property="heightConstraint" destination="zoO-rU-D6P" id="boQ-DB-sr0"/>
+                                    <outlet property="secondButton" destination="lhr-iI-g1b" id="Nxj-Tj-ba4"/>
                                 </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DaX-sB-jZ9" firstAttribute="leading" secondItem="obg-nm-Dit" secondAttribute="leading" id="28T-fY-HaQ"/>
+                            <constraint firstItem="LKX-Dk-zAU" firstAttribute="leading" secondItem="obg-nm-Dit" secondAttribute="leading" id="2Qv-t4-itZ"/>
                             <constraint firstItem="DaX-sB-jZ9" firstAttribute="top" secondItem="obg-nm-Dit" secondAttribute="topMargin" id="2bo-L9-5y7"/>
                             <constraint firstItem="10R-O8-V5J" firstAttribute="top" secondItem="obg-nm-Dit" secondAttribute="top" id="6qA-R5-27k"/>
                             <constraint firstItem="10R-O8-V5J" firstAttribute="leading" secondItem="obg-nm-Dit" secondAttribute="leading" id="7KS-bo-6W7"/>
                             <constraint firstAttribute="trailing" secondItem="10R-O8-V5J" secondAttribute="trailing" id="FDy-ca-Gzg"/>
+                            <constraint firstItem="Wec-Kh-C03" firstAttribute="top" secondItem="LKX-Dk-zAU" secondAttribute="bottom" id="S5Z-kj-IEI"/>
+                            <constraint firstAttribute="trailing" secondItem="LKX-Dk-zAU" secondAttribute="trailing" id="euo-qd-yW9"/>
                             <constraint firstAttribute="trailing" secondItem="DaX-sB-jZ9" secondAttribute="trailing" id="pUv-FS-5oE"/>
                             <constraint firstItem="Wec-Kh-C03" firstAttribute="top" secondItem="10R-O8-V5J" secondAttribute="bottom" id="upP-A4-iru"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="closeButton" destination="m9P-sy-0QO" id="d9n-T1-xt9"/>
+                        <outlet property="bottomBar" destination="LKX-Dk-zAU" id="fy1-mh-Izj"/>
                         <outlet property="tableView" destination="10R-O8-V5J" id="Ijb-GO-p5r"/>
-                        <outlet property="textField" destination="9sv-sp-sGm" id="T29-WI-7MF"/>
                         <outlet property="topBar" destination="DaX-sB-jZ9" id="pT3-ef-aHd"/>
                     </connections>
                 </viewController>

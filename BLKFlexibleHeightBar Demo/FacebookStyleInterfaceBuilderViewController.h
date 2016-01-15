@@ -1,5 +1,5 @@
 //
-//  InterfaceBuilderViewController.h
+//  FacebookStyleInterfaceBuilderViewController.h
 //  BLKFlexibleHeightBar Demo
 //
 //  Created by Denis Zamataev on 14/01/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InterfaceBuilderViewController : UIViewController
+@interface FacebookStyleInterfaceBuilderViewController : UIViewController
 
 @end

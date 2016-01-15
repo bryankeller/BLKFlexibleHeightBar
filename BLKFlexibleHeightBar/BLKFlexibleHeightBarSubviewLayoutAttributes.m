@@ -57,6 +57,7 @@
         _alpha = layoutAttributes.alpha;
         _zIndex = layoutAttributes.zIndex;
         _hidden = layoutAttributes.hidden;
+        _shouldAffectPositioning = layoutAttributes.shouldAffectPositioning;
     }
     
     return self;
