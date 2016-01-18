@@ -69,8 +69,20 @@
     _minimumBarHeight = fmax(minimumBarHeight, 0.0);
 }
 
-
 # pragma mark - Layout attributes
+
+- (void)updateConstraints
+{
+    [super updateConstraints];
+    
+    // Update height constraint
+    if (self.heightConstraint) {
+        CGFloat height = [self interpolateFromValue:self.maximumBarHeight toValue:self.minimumBarHeight withProgress:self.progress];
+        if (self.heightConstraint.constant != height) {
+            self.heightConstraint.constant = height;
+        }
+    }
+}
 
 - (void)layoutSubviews
 {
@@ -81,12 +93,6 @@
         CGRect barFrame = self.frame;
         barFrame.size.height = [self interpolateFromValue:self.maximumBarHeight toValue:self.minimumBarHeight withProgress:self.progress];
         self.frame = barFrame;
-    }
-    else {
-        CGFloat height = [self interpolateFromValue:self.maximumBarHeight toValue:self.minimumBarHeight withProgress:self.progress];
-        if (self.heightConstraint.constant != height) {
-            self.heightConstraint.constant = height;
-        }
     }
     
     if(self.behaviorDefiner && self.behaviorDefiner.isElasticMaximumHeightAtTop)

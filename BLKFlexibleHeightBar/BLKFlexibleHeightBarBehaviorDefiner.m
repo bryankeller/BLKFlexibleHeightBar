@@ -95,9 +95,8 @@
     CGFloat deltaYOffset = (self.flexibleHeightBar.maximumBarHeight-self.flexibleHeightBar.minimumBarHeight) * deltaProgress;
     scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, scrollView.contentOffset.y+deltaYOffset);
     
-//    NSLog(@"SnapToProgress: %f, deltaProgress: %f, deltaYOffset: %f", progress, deltaProgress, deltaYOffset);
-    
     self.flexibleHeightBar.progress = progress;
+    [self.flexibleHeightBar setNeedsUpdateConstraints];
     [self.flexibleHeightBar setNeedsLayout];
     [self.flexibleHeightBar layoutIfNeeded];
     

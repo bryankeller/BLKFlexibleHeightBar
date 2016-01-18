@@ -160,6 +160,7 @@
         
         self.flexibleHeightBar.progress = self.previousProgress + deltaProgress;
         
+        [self.flexibleHeightBar setNeedsUpdateConstraints];
         [self.flexibleHeightBar setNeedsLayout];
     }
 }

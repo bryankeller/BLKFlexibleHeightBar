@@ -63,8 +63,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ2-yu-JhN">
-                                <rect key="frame" x="318" y="358" width="114" height="30"/>
-                                <state key="normal" title="Interface Builder"/>
+                                <rect key="frame" x="265" y="358" width="220" height="30"/>
+                                <state key="normal" title="Interface Builder and Constaints"/>
                                 <connections>
                                     <segue destination="EQ1-hj-Emj" kind="presentation" id="P0g-WK-0kW"/>
                                 </connections>
@@ -116,10 +116,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaX-sB-jZ9" customClass="FacebookStyleInterfaceBuilderTopBar">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2u-iB-2YE" userLabel="Background View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                                        <color key="backgroundColor" red="0.30196078430000001" green="0.41960784309999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sv-sp-sGm">
                                         <rect key="frame" x="8" y="26" width="540" height="30"/>
                                         <color key="backgroundColor" red="0.21568627450980393" green="0.27058823529411763" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,25 +135,15 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.41960784309999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="m9P-sy-0QO" secondAttribute="trailing" constant="8" id="0yv-zv-tpu"/>
                                     <constraint firstAttribute="height" constant="64" id="936-Oh-FnC"/>
-                                    <constraint firstItem="m9P-sy-0QO" firstAttribute="leading" secondItem="D2u-iB-2YE" secondAttribute="trailing" id="YJX-R5-5Qu"/>
-                                    <constraint firstAttribute="bottom" secondItem="D2u-iB-2YE" secondAttribute="bottom" id="bNI-vj-YCx"/>
                                     <constraint firstAttribute="bottom" secondItem="9sv-sp-sGm" secondAttribute="bottom" constant="8" id="bcK-a6-Rlc"/>
                                     <constraint firstItem="9sv-sp-sGm" firstAttribute="leading" secondItem="DaX-sB-jZ9" secondAttribute="leading" constant="8" id="dSL-Bh-5HP"/>
                                     <constraint firstAttribute="bottom" secondItem="m9P-sy-0QO" secondAttribute="bottom" constant="8" id="elx-nK-vU7"/>
-                                    <constraint firstItem="D2u-iB-2YE" firstAttribute="leading" secondItem="DaX-sB-jZ9" secondAttribute="leading" id="i4T-Z1-4JI"/>
                                     <constraint firstItem="m9P-sy-0QO" firstAttribute="leading" secondItem="9sv-sp-sGm" secondAttribute="trailing" constant="8" id="krh-wT-pfT"/>
-                                    <constraint firstAttribute="trailing" secondItem="D2u-iB-2YE" secondAttribute="trailing" id="slM-Xx-gGR"/>
-                                    <constraint firstItem="D2u-iB-2YE" firstAttribute="top" secondItem="DaX-sB-jZ9" secondAttribute="top" id="xKa-bP-xLj"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="YJX-R5-5Qu"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <outlet property="closeButton" destination="m9P-sy-0QO" id="HL9-aU-mDJ"/>
                                     <outlet property="heightConstraint" destination="936-Oh-FnC" id="Kl1-h2-mmD"/>
@@ -167,10 +153,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKX-Dk-zAU" userLabel="Bottom Bar" customClass="FacebookStyleInterfaceBuilderBottomBar">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDE-l6-PBa" userLabel="Background View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <color key="backgroundColor" red="0.30196078430000001" green="0.41960784309999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POt-fU-6fg">
                                         <rect key="frame" x="15" y="11" width="22" height="22"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,18 +162,14 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.41960784309999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="lhr-iI-g1b" firstAttribute="centerY" secondItem="LKX-Dk-zAU" secondAttribute="centerY" id="2NZ-9R-cSC"/>
                                     <constraint firstItem="POt-fU-6fg" firstAttribute="centerY" secondItem="LKX-Dk-zAU" secondAttribute="centerY" id="BiD-Vi-Fth"/>
                                     <constraint firstItem="lhr-iI-g1b" firstAttribute="top" secondItem="LKX-Dk-zAU" secondAttribute="top" constant="11" id="Eax-Xy-PKF"/>
-                                    <constraint firstItem="cDE-l6-PBa" firstAttribute="top" secondItem="LKX-Dk-zAU" secondAttribute="top" id="V38-OC-DZM"/>
-                                    <constraint firstAttribute="bottom" secondItem="cDE-l6-PBa" secondAttribute="bottom" id="cz4-0G-kGe"/>
                                     <constraint firstAttribute="trailing" secondItem="lhr-iI-g1b" secondAttribute="trailing" constant="15" id="h00-kT-ebe"/>
                                     <constraint firstItem="POt-fU-6fg" firstAttribute="top" secondItem="LKX-Dk-zAU" secondAttribute="top" constant="11" id="jvm-Fk-EP3"/>
-                                    <constraint firstAttribute="trailing" secondItem="cDE-l6-PBa" secondAttribute="trailing" id="kSm-jl-ecI"/>
                                     <constraint firstItem="POt-fU-6fg" firstAttribute="leading" secondItem="LKX-Dk-zAU" secondAttribute="leading" constant="15" id="mkP-kg-Ta0"/>
-                                    <constraint firstItem="cDE-l6-PBa" firstAttribute="leading" secondItem="LKX-Dk-zAU" secondAttribute="leading" id="uBN-Rm-22d"/>
                                     <constraint firstAttribute="height" constant="44" id="zoO-rU-D6P"/>
                                 </constraints>
                                 <variation key="default">
