@@ -108,7 +108,7 @@
     {
         self.currentlySnapping = YES;
         
-        __block CGFloat snapPosition = MAXFLOAT;
+        __block CGFloat snapPosition = CGFLOAT_MAX;
         [self.snappingPositionsForProgressRanges enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             
             NSValue *existingRangeValue = key;
@@ -124,7 +124,7 @@
             
         }];
         
-        if(snapPosition != MAXFLOAT)
+        if(snapPosition != CGFLOAT_MAX)
         {
             [UIView animateWithDuration:0.15 animations:^{
                 
