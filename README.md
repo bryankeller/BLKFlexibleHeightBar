@@ -1,9 +1,9 @@
-<img src="http://foxweb.marist.edu/users/stbk/TitleImage.png" alt="BLKFlexibleHeightBar" width="600"/> 
+<img src="https://foxweb.marist.edu/users/stbk/TitleImage.png" alt="BLKFlexibleHeightBar" width="600"/> 
 
 ## Create condensing header bars like those seen in the Facebook, Square Cash, and Safari iOS apps.
 
-<img src="http://foxweb.marist.edu/users/stbk/SquareCashDemo2.gif" alt="Square Cash Style Bar" width="300"/> 
-<img src="http://foxweb.marist.edu/users/stbk/FacebookDemo2.gif" alt="Square Cash Style Bar" width="300"/>
+<img src="https://foxweb.marist.edu/users/stbk/SquareCashDemo2.gif" alt="Square Cash Style Bar" width="300"/> 
+<img src="https://foxweb.marist.edu/users/stbk/FacebookDemo2.gif" alt="Square Cash Style Bar" width="300"/>
 
 `BLKFlexibleHeightBar` allows you to create header bars with flexible heights. Often, this sort of UI paradigm is used to hide "chrome" and make room for more content as a user is scrolling. This is seen in third party apps like Facebook and Square Cash, as well as first party apps like Safari.
 
@@ -135,7 +135,7 @@ finalLayoutAttributes.transform = CGAffineTransformConcat(scale, translation);
 
 #### Congrats! You should now have something that looks and behaves like this:
 
-<img src="http://foxweb.marist.edu/users/stbk/BasicDemo.gif" alt="Demo" width="300"/>
+<img src="https://foxweb.marist.edu/users/stbk/BasicDemo.gif" alt="Demo" width="300"/>
 
 
 ## Creating custom behavior definers
