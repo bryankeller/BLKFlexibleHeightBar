@@ -20,7 +20,7 @@
 #import "BLKFlexibleHeightBar.h"
 
 @interface BLKFlexibleHeightBar ()
-
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @end
 
 @implementation BLKFlexibleHeightBar
@@ -47,6 +47,18 @@
     if(self = [super initWithFrame:frame])
     {
         [self commonInit];
+        _maximumBarHeight = CGRectGetMaxY(frame);
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame andTableView:(UITableView *)tableView
+{
+    if(self = [super initWithFrame:frame])
+    {
+        [self commonInit];
+        self.tableView = tableView;
         _maximumBarHeight = CGRectGetMaxY(frame);
     }
     
@@ -118,6 +130,17 @@
         }
         
     }];
+    
+    if (self.tableView) {
+        [self updateTableViewContentInset];
+    }
+}
+
+- (void)updateTableViewContentInset {
+    if (self.frame.size.height <= self.maximumBarHeight) {
+        UIEdgeInsets currentInsets = self.tableView.contentInset;
+        self.tableView.contentInset = UIEdgeInsetsMake(self.frame.size.height + self.frame.origin.y, currentInsets.left, currentInsets.bottom, currentInsets.right);
+    }
 }
 
 - (void)applyFloorLayoutAttributes:(BLKFlexibleHeightBarSubviewLayoutAttributes *)floorLayoutAttributes ceilingLayoutAttributes:(BLKFlexibleHeightBarSubviewLayoutAttributes *)ceilingLayoutAttributes toSubview:(UIView *)subview withFloorProgress:(CGFloat)floorProgress ceilingProgress:(CGFloat)ceilingProgress;

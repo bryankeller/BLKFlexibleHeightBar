@@ -32,6 +32,14 @@
  */
 
 @interface BLKFlexibleHeightBar : UIView
+/**
+ *  Use this initializer when you are using a UITableView as your scrollView
+ *  It will adjust the contentInset of the table when bar height changes
+ *  This way, section headers (which are contentInset based) will scroll
+ *
+ *  @param tableView The tableView you are placing below the BLKFlexibleTableViewHeightBar
+ */
+- (instancetype)initWithFrame:(CGRect)frame andTableView:(UITableView *)tableView;
 
 /**
  The current progress, representing how much the bar has shrunk. progress == 0.0 puts the bar at its maximum height. progress == 1.0 puts the bar at its minimum height. The default value is 0.0.
