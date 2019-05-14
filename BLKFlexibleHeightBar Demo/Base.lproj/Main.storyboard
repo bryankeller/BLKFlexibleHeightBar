@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Demo View Controller-->
@@ -60,12 +62,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ2-yu-JhN">
+                                <rect key="frame" x="265" y="358" width="220" height="30"/>
+                                <state key="normal" title="Interface Builder and Constaints"/>
+                                <connections>
+                                    <segue destination="EQ1-hj-Emj" kind="presentation" id="P0g-WK-0kW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pMC-ZW-gWS" secondAttribute="trailing" constant="16" id="CvR-cU-HXs"/>
                             <constraint firstItem="pMC-ZW-gWS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="FUe-QY-tw4"/>
                             <constraint firstItem="pMC-ZW-gWS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JHd-yC-UMG"/>
+                            <constraint firstItem="fJ2-yu-JhN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="73" id="KeS-29-gE6"/>
+                            <constraint firstItem="fJ2-yu-JhN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="75" id="Prb-Dg-kYk"/>
                             <constraint firstAttribute="centerX" secondItem="Omr-0y-iOl" secondAttribute="centerX" constant="-75" id="QUX-7K-WqX"/>
                             <constraint firstAttribute="centerX" secondItem="613-nw-wru" secondAttribute="centerX" constant="75" id="dOG-wr-GnI"/>
                             <constraint firstAttribute="centerY" secondItem="613-nw-wru" secondAttribute="centerY" id="kDT-Z8-tFS"/>
@@ -81,6 +92,123 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="258" y="305"/>
+        </scene>
+        <!--Facebook Style Interface Builder View Controller-->
+        <scene sceneID="cAb-t7-LWU">
+            <objects>
+                <viewController id="EQ1-hj-Emj" customClass="FacebookStyleInterfaceBuilderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8rS-bD-bhb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wec-Kh-C03"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="obg-nm-Dit">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="10R-O8-V5J">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="EQ1-hj-Emj" id="xXO-Sd-mr1"/>
+                                    <outlet property="delegate" destination="EQ1-hj-Emj" id="fzR-H1-n2S"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaX-sB-jZ9" customClass="FacebookStyleInterfaceBuilderTopBar">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sv-sp-sGm">
+                                        <rect key="frame" x="8" y="26" width="540" height="30"/>
+                                        <color key="backgroundColor" red="0.21568627450980393" green="0.27058823529411763" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.54509803921568623" green="0.60392156862745094" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9P-sy-0QO">
+                                        <rect key="frame" x="556" y="26" width="36" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="Kse-0G-W7g"/>
+                                            <constraint firstAttribute="height" constant="30" id="YQy-Qx-kUP"/>
+                                        </constraints>
+                                        <state key="normal" image="Close.png"/>
+                                        <connections>
+                                            <action selector="closeViewController:" destination="EQ1-hj-Emj" eventType="touchUpInside" id="2Xf-wq-xRL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.41960784309999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="m9P-sy-0QO" secondAttribute="trailing" constant="8" id="0yv-zv-tpu"/>
+                                    <constraint firstAttribute="height" constant="64" id="936-Oh-FnC"/>
+                                    <constraint firstAttribute="bottom" secondItem="9sv-sp-sGm" secondAttribute="bottom" constant="8" id="bcK-a6-Rlc"/>
+                                    <constraint firstItem="9sv-sp-sGm" firstAttribute="leading" secondItem="DaX-sB-jZ9" secondAttribute="leading" constant="8" id="dSL-Bh-5HP"/>
+                                    <constraint firstAttribute="bottom" secondItem="m9P-sy-0QO" secondAttribute="bottom" constant="8" id="elx-nK-vU7"/>
+                                    <constraint firstItem="m9P-sy-0QO" firstAttribute="leading" secondItem="9sv-sp-sGm" secondAttribute="trailing" constant="8" id="krh-wT-pfT"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="closeButton" destination="m9P-sy-0QO" id="HL9-aU-mDJ"/>
+                                    <outlet property="heightConstraint" destination="936-Oh-FnC" id="Kl1-h2-mmD"/>
+                                    <outlet property="textField" destination="9sv-sp-sGm" id="Ub4-kC-CCq"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKX-Dk-zAU" userLabel="Bottom Bar" customClass="FacebookStyleInterfaceBuilderBottomBar">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POt-fU-6fg">
+                                        <rect key="frame" x="15" y="11" width="22" height="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhr-iI-g1b">
+                                        <rect key="frame" x="563" y="11" width="22" height="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.41960784309999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="lhr-iI-g1b" firstAttribute="centerY" secondItem="LKX-Dk-zAU" secondAttribute="centerY" id="2NZ-9R-cSC"/>
+                                    <constraint firstItem="POt-fU-6fg" firstAttribute="centerY" secondItem="LKX-Dk-zAU" secondAttribute="centerY" id="BiD-Vi-Fth"/>
+                                    <constraint firstItem="lhr-iI-g1b" firstAttribute="top" secondItem="LKX-Dk-zAU" secondAttribute="top" constant="11" id="Eax-Xy-PKF"/>
+                                    <constraint firstAttribute="trailing" secondItem="lhr-iI-g1b" secondAttribute="trailing" constant="15" id="h00-kT-ebe"/>
+                                    <constraint firstItem="POt-fU-6fg" firstAttribute="top" secondItem="LKX-Dk-zAU" secondAttribute="top" constant="11" id="jvm-Fk-EP3"/>
+                                    <constraint firstItem="POt-fU-6fg" firstAttribute="leading" secondItem="LKX-Dk-zAU" secondAttribute="leading" constant="15" id="mkP-kg-Ta0"/>
+                                    <constraint firstAttribute="height" constant="44" id="zoO-rU-D6P"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BiD-Vi-Fth"/>
+                                        <exclude reference="2NZ-9R-cSC"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="firstButton" destination="POt-fU-6fg" id="nwV-J1-vhx"/>
+                                    <outlet property="heightConstraint" destination="zoO-rU-D6P" id="boQ-DB-sr0"/>
+                                    <outlet property="secondButton" destination="lhr-iI-g1b" id="Nxj-Tj-ba4"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DaX-sB-jZ9" firstAttribute="leading" secondItem="obg-nm-Dit" secondAttribute="leading" id="28T-fY-HaQ"/>
+                            <constraint firstItem="LKX-Dk-zAU" firstAttribute="leading" secondItem="obg-nm-Dit" secondAttribute="leading" id="2Qv-t4-itZ"/>
+                            <constraint firstItem="DaX-sB-jZ9" firstAttribute="top" secondItem="obg-nm-Dit" secondAttribute="topMargin" id="2bo-L9-5y7"/>
+                            <constraint firstItem="10R-O8-V5J" firstAttribute="top" secondItem="obg-nm-Dit" secondAttribute="top" id="6qA-R5-27k"/>
+                            <constraint firstItem="10R-O8-V5J" firstAttribute="leading" secondItem="obg-nm-Dit" secondAttribute="leading" id="7KS-bo-6W7"/>
+                            <constraint firstAttribute="trailing" secondItem="10R-O8-V5J" secondAttribute="trailing" id="FDy-ca-Gzg"/>
+                            <constraint firstItem="Wec-Kh-C03" firstAttribute="top" secondItem="LKX-Dk-zAU" secondAttribute="bottom" id="S5Z-kj-IEI"/>
+                            <constraint firstAttribute="trailing" secondItem="LKX-Dk-zAU" secondAttribute="trailing" id="euo-qd-yW9"/>
+                            <constraint firstAttribute="trailing" secondItem="DaX-sB-jZ9" secondAttribute="trailing" id="pUv-FS-5oE"/>
+                            <constraint firstItem="Wec-Kh-C03" firstAttribute="top" secondItem="10R-O8-V5J" secondAttribute="bottom" id="upP-A4-iru"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="bottomBar" destination="LKX-Dk-zAU" id="fy1-mh-Izj"/>
+                        <outlet property="tableView" destination="10R-O8-V5J" id="Ijb-GO-p5r"/>
+                        <outlet property="topBar" destination="DaX-sB-jZ9" id="pT3-ef-aHd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TAl-oz-fJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066" y="1407"/>
         </scene>
         <!--Square Cash Style View Controller-->
         <scene sceneID="GUJ-w2-dY0">
@@ -156,6 +284,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Close.png" width="50" height="50"/>
         <image name="facebook-icon.png" width="512" height="512"/>
         <image name="square-cash-icon.png" width="256" height="256"/>
     </resources>

@@ -54,4 +54,9 @@
  */
 @property (nonatomic) BLKFlexibleHeightBarBehaviorDefiner *behaviorDefiner;
 
+/**
+ The constraint to act on when changing height between min and max. If it is set the frame won't be affected.
+ */
+@property (nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+
 @end

@@ -19,6 +19,10 @@
 
 #import "BLKFlexibleHeightBarSubviewLayoutAttributes.h"
 
+@interface BLKFlexibleHeightBarSubviewLayoutAttributes ()
+
+@end
+
 @implementation BLKFlexibleHeightBarSubviewLayoutAttributes
 
 - (instancetype)init
@@ -34,6 +38,7 @@
         _alpha = 1.0;
         _zIndex = 0;
         _hidden = NO;
+        _shouldAffectPositioning = YES;
     }
     
     return self;
@@ -52,6 +57,7 @@
         _alpha = layoutAttributes.alpha;
         _zIndex = layoutAttributes.zIndex;
         _hidden = layoutAttributes.hidden;
+        _shouldAffectPositioning = layoutAttributes.shouldAffectPositioning;
     }
     
     return self;
@@ -122,6 +128,21 @@
     {
         _frame = CGRectNull;
     }
+}
+
+- (void)setAlpha:(CGFloat)alpha
+{
+    _alpha = alpha;
+}
+
+- (void)setZIndex:(NSInteger)zIndex
+{
+    _zIndex = zIndex;
+}
+
+- (void)setHidden:(BOOL)hidden
+{
+    _hidden = hidden;
 }
 
 @end

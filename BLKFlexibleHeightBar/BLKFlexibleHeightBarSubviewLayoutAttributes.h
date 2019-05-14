@@ -83,12 +83,16 @@
  */
 @property (nonatomic, getter=isHidden) BOOL hidden;
 
-
 /**
  A convenience initializer that returns layout attributes with the same property values as the specified layout attributes, or nil of initialization fails.
  @param The existing layout attributes.
  @return Layout attributes with the same property values as the specified layout attributes, or nil of initialization fails.
  */
 - (instancetype)initWithExistingLayoutAttributes:(BLKFlexibleHeightBarSubviewLayoutAttributes *)layoutAttributes;
+
+/**
+ This setting can disable the effect of frame, bounds, size, center, transform, transform3D. Defaults to YES, meaning that these properties will be taken into account.
+ */
+@property (nonatomic) BOOL shouldAffectPositioning;
 
 @end

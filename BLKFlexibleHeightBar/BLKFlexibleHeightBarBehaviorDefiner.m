@@ -96,6 +96,7 @@
     scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, scrollView.contentOffset.y+deltaYOffset);
     
     self.flexibleHeightBar.progress = progress;
+    [self.flexibleHeightBar setNeedsUpdateConstraints];
     [self.flexibleHeightBar setNeedsLayout];
     [self.flexibleHeightBar layoutIfNeeded];
     
