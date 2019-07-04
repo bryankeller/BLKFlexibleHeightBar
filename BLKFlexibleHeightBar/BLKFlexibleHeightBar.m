@@ -81,11 +81,6 @@
     barFrame.size.height = [self interpolateFromValue:self.maximumBarHeight toValue:self.minimumBarHeight withProgress:self.progress];
     self.frame = barFrame;
     
-    if(self.behaviorDefiner && self.behaviorDefiner.isElasticMaximumHeightAtTop)
-    {
-        self.progress = fmax(self.progress, 0.0);
-    }
-    
     // Update subviews using the appropriate layout attributes for the current progress
     [self.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
