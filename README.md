@@ -26,7 +26,7 @@ Due to this library's modular, extensible nature, you are not limited to any one
 
 ## How do I use it?
 
-###Before we get started, understand this:
+### Before we get started, understand this:
 The height of the bar is not set directy by adjusting the bar's frame. Rather, height adjustments are made by setting the `progress` property of the bar. The progress property represents how much the bar has shrunk from its maximum height to its minimum height
 
 * `progress == 0.0` means the bar is at its maximum height.
