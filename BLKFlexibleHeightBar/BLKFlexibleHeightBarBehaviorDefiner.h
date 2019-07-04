@@ -45,6 +45,11 @@
 @property (nonatomic, getter=isCurrentlySnapping) BOOL currentlySnapping;
 
 /**
+ *  Determines the animation duration while snapping
+ */
+@property (nonatomic, assign) CGFloat snappingAnimateDuration;
+
+/**
  Determines whether the bar can stretch to larger sizes than it's `maximumBarHeight`. Default value is NO.
  */
 @property (nonatomic, getter=isElasticMaximumHeightAtTop) BOOL elasticMaximumHeightAtTop;
