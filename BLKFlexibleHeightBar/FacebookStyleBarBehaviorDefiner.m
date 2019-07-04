@@ -147,6 +147,10 @@
             [self applyPositiveDirectionProgressTrackingThreshold];
         }
     }
+    
+    if (self.scrollerViewDelegate && [self.scrollerViewDelegate respondsToSelector:@selector(scrollViewWillBeginDragging:)]) {
+        [self.scrollerViewDelegate scrollViewWillBeginDragging:scrollView];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -162,7 +166,60 @@
         
         [self.flexibleHeightBar setNeedsLayout];
     }
+    
+    if (self.scrollerViewDelegate && [self.scrollerViewDelegate respondsToSelector:@selector(scrollViewDidScroll:)]) {
+        [self.scrollerViewDelegate scrollViewDidScroll:scrollView];
+    }
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (self.scrollerViewDelegate && [self.scrollerViewDelegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)]) {
+        [self.scrollerViewDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    }
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    if (self.scrollerViewDelegate && [self.scrollerViewDelegate respondsToSelector:@selector(scrollViewWillBeginDecelerating:)]) {
+        [self.scrollerViewDelegate scrollViewWillBeginDecelerating:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (self.scrollerViewDelegate && [self.scrollerViewDelegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)]) {
+        [self.scrollerViewDelegate scrollViewDidEndDecelerating:scrollView];
+    }
+}
+
+# pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = 44;
+    if (self.tableViewDelegate && [self.tableViewDelegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
+        height = [self.tableViewDelegate tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+    return height;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.tableViewDelegate && [self.tableViewDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+        [self.tableViewDelegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+    }
+}
+
+# pragma mark - UICollectionViewDelegate
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    BOOL shouldSelectItem = YES;
+    if (self.collectionViewDelegate && [self.collectionViewDelegate respondsToSelector:@selector(collectionView:shouldSelectItemAtIndexPath:)]) {
+        shouldSelectItem = [self.collectionViewDelegate collectionView:collectionView shouldSelectItemAtIndexPath:indexPath];
+    }
+    return shouldSelectItem;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.collectionViewDelegate && [self.collectionViewDelegate respondsToSelector:@selector(collectionView:didSelectItemAtIndexPath:)]) {
+        [self.collectionViewDelegate collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+    }
+}
 
 @end
