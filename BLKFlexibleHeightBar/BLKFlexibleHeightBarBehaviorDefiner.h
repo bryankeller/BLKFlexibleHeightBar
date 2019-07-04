@@ -20,6 +20,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class BLKFlexibleHeightBar;
 
 /**
@@ -33,6 +35,11 @@
  The `BLKFlexibleHeightBar` instance corresponding with the behavior definer.
  */
 @property (nonatomic, readonly, weak) BLKFlexibleHeightBar *flexibleHeightBar;
+
+/**
+ All unhandled messages will be redirected to this delegate.
+ */
+@property (nonatomic, weak) id<NSObject> delegate;
 
 /**
  Determines whether snapping is enabled or not. Default value is YES.
@@ -96,3 +103,5 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 
 @end
+
+NS_ASSUME_NONNULL_END

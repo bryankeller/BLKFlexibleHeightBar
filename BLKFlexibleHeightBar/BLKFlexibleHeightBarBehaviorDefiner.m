@@ -108,7 +108,7 @@
     {
         self.currentlySnapping = YES;
         
-        __block CGFloat snapPosition = MAXFLOAT;
+        __block CGFloat snapPosition = CGFLOAT_MAX;
         [self.snappingPositionsForProgressRanges enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             
             NSValue *existingRangeValue = key;
@@ -124,7 +124,7 @@
             
         }];
         
-        if(snapPosition != MAXFLOAT)
+        if(snapPosition != CGFLOAT_MAX)
         {
             [UIView animateWithDuration:0.15 animations:^{
                 
@@ -149,6 +149,9 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     [self snapWithScrollView:scrollView];
+    
+    NSInvocation* invocation = [self invocationForSelector:@selector(scrollViewDidEndDecelerating:) scrollView:scrollView];
+    [invocation invoke];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
@@ -157,11 +160,69 @@
     {
         [self snapWithScrollView:scrollView];
     }
+    
+    NSInvocation* invocation = [self invocationForSelector:@selector(scrollViewDidEndDragging:willDecelerate:) scrollView:scrollView];
+    [invocation setArgument:&decelerate atIndex:3];
+    [invocation invoke];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     scrollView.scrollIndicatorInsets =  UIEdgeInsetsMake(CGRectGetHeight(self.flexibleHeightBar.bounds), scrollView.scrollIndicatorInsets.left, scrollView.scrollIndicatorInsets.bottom, scrollView.scrollIndicatorInsets.right);
+    
+    NSInvocation* invocation = [self invocationForSelector:@selector(scrollViewDidScroll:) scrollView:scrollView];
+    [invocation invoke];
+}
+
+# pragma mark - Message forwarding helper
+
+- (NSInvocation*)invocationForSelector:(SEL)selector scrollView:(UIScrollView*)scrollView
+{
+    if ([self.delegate respondsToSelector:selector])
+    {
+        NSMethodSignature* signature = [self.delegate.class instanceMethodSignatureForSelector:selector];
+        NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:signature];
+        [invocation setTarget:self.delegate];
+        [invocation setSelector:selector];
+        [invocation setArgument:&scrollView atIndex:2];
+
+        return invocation;
+    }
+    
+    return nil;
+}
+
+# pragma mark - Message forwarding
+
+- (void)forwardInvocation:(NSInvocation*)anInvocation
+{
+    if ([self.delegate respondsToSelector:anInvocation.selector])
+    {
+        [anInvocation invokeWithTarget:self.delegate];
+    }
+}
+
+- (NSMethodSignature*)methodSignatureForSelector:(SEL)aSelector
+{
+    NSMethodSignature *first = [super methodSignatureForSelector:aSelector];
+    NSMethodSignature *second = [(NSObject*)self.delegate methodSignatureForSelector:aSelector];
+    
+    if (first)
+    {
+        return first;
+    }
+    else if (second)
+    {
+        return second;
+    }
+    
+    return nil;
+}
+
+- (BOOL)respondsToSelector:(SEL)aSelector
+{
+    BOOL result = [super respondsToSelector:aSelector] || [self.delegate respondsToSelector:aSelector];
+    return result;
 }
 
 @end
